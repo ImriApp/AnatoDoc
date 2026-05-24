@@ -1,0 +1,129 @@
+---
+title: 'Greek Lexicon DB'
+---
+
+## Function
+
+Greek Lexicon DB stores all lemma information in a database-like structure of tables (relations),
+and serves as a sandbox for lemma-centric studies.
+
+## Overview
+
+**The Supporting Tables** define fundamental and recurring entries.
+The central supporting tables define abbreviated references,
+early and modern edition bibliographies, languages, category types,
+and ancient words. These entities are the building blocks of the higher-level tables,
+Ancient Words full Reference and the Lemma Pool:
+
+**Ancient Word full Reference** (also under the Supporting Tables page)
+creates automated references for Ancient words according to annotations made
+with and imported from INCEpTION. These references include bibliographical information
+(treatise, publication, textual context) and attributive information
+(source language, category type, and lemma).
+
+**The Lemma Pool** defines Lemmas. Each lemma is attributed a latin transliteration,
+general english translation, short and long descriptions,
+list of automated references to the ancient texts (from Ancient Word full Reference),
+and more. All data culminates in the lemma pool, and it is the single source of content for ATLOMY.com lemma pages.
+
+## DB Map
+
+```mermaid
+erDiagram
+    direction TB
+	Abbriviated_References {
+		TEXT reference PK ""  
+		TEXT author  ""  
+		TEXT english_title  ""  
+		TEXT author_abbriviation  ""  
+		TEXT treatise_abbriviation  ""  
+	}
+
+	Early_Edition_Bibliographies {
+		TEXT name PK ""  
+		TEXT author  ""  
+		TEXT treatise  ""  
+		TEXT editor  ""  
+		TEXT edition_title  ""  
+		TEXT publication_city  ""  
+		NUMBER publication_year  ""  
+		TEXT publisher  ""  
+		NUMBER volume  ""  
+		CHOICE reference FK ""  
+		NUMBER century  ""  
+		TEXT editor_abbriviation  ""  
+	}
+
+	Modern_Edition_Bibliographies {
+		TEXT name PK ""  
+		TEXT author  ""  
+		TEXT treatise  ""  
+		TEXT editor  ""  
+		TEXT edition_title  ""  
+		TEXT publication_city  ""  
+		NUMBER publication_year  ""  
+		TEXT publisher  ""  
+		NUMBER volume  ""  
+		CHOICE reference FK ""  
+		NUMBER century  ""  
+		TEXT editor_abbriviation  ""  
+	}
+
+	Source_Languages {
+		TEXT language PK ""  
+	}
+
+	Category_Types {
+		TEXT category PK ""  
+	}
+
+	Ancient_Word_Full_Reference {
+		FORMULA automated_modern_reference PK ""  
+		CHOICE modern_edition FK ""  
+		NUMBER modern_book  ""  
+		NUMBER modern_chapter  ""  
+		TEXT modern_section  ""  
+		NUMBER modern_page  ""  
+		NUMBER modern_line  ""  
+		FORMULA automated_early_reference  ""  
+		CHOICE early_edition FK ""  
+		NUMBER early_book  ""  
+		NUMBER early_chapter  ""  
+		NUMBER early_page  ""  
+		TEXT early_column  ""  
+		NUMBER early_line  ""  
+		CHOICE word FK ""  
+		TEXT word_before  ""  
+		TEXT word_after  ""  
+		TEXT quote  ""  
+		CHOICE category_type FK ""  
+		CHOICE Lemma FK ""  
+		TEXT lemma_word  ""  
+		TEXT lemma_arabic  ""  
+		TEXT dependent_words  ""  
+	}
+
+	Ancient_Word_Lookup_Table {
+		TEXT word PK ""  
+	}
+
+	Lemma_Pool {
+		TEXT lemma PK ""  
+		TEXT latin_transliteration  ""  
+		TEXT english_translation  ""  
+		TEXT alternative_spelling  ""  
+		CHOICE source_language FK ""  
+		TEXT short_description  ""  
+		TEXT long_description  ""  
+		TEXT related_terms  ""  
+	}
+
+	Abbriviated_References||--o{Early_Edition_Bibliographies:"Provides Abbriviations for"
+	Abbriviated_References||--o{Modern_Edition_Bibliographies:"Provides Abbriviations for"
+	Modern_Edition_Bibliographies||--o{Ancient_Word_Full_Reference:"Defines Modern Bibliographies for"
+	Early_Edition_Bibliographies||--o{Ancient_Word_Full_Reference:"Defines Early Bibliographies for"
+	Category_Types||--o{Ancient_Word_Full_Reference:"Defines Category Types for"
+	Ancient_Word_Lookup_Table||--o{Ancient_Word_Full_Reference:"Enlists Ancient Words for"
+	Lemma_Pool||--o{Ancient_Word_Full_Reference:"Defines Lemmas for, and reflects Automated References from"
+	Source_Languages||--o{Lemma_Pool:"Defines Languages for"
+```
