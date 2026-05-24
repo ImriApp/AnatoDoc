@@ -10,7 +10,7 @@ The international project ATLOMY is funded by the European Research Council and 
 
 A main part of the project is the development of a high-end 3D interactive atlas mapping the human body from an historical perspective. Unlike atlases of modern anatomy, our atlases presents many anatomies and our users require diverse interactive viewing and analytical interfaces absent from existing atlases of modern anatomy.
 
-## Vision
+## The Vision
 
 ATLOMY is developing innovative methods to analyze, interpret and recreate complex objects that are described in ancient texts. The lack of available tools for visual representation has been a long-standing problem in historical and archeological research. ATLOMY brings historians, anatomists, 3-D artists, machine learning engineers and software developers together to solve this problem.
 
