@@ -1,0 +1,11 @@
+{
+  "Lemma": {
+    "description": "The canonical, uninflected base form of a word, conventionally used as the dictionary headword."
+  },
+  "Model Lemma": {
+    "description": "A connection done on the Admin Dashboard on ATLOMY.com, between a lemma page and a model page, central for the continuity of the website."
+  },
+  "Lemma Pool": {
+    "description": "A Table in the Greek Lexicon DB page on Coda, which defines Lemmas. Each lemma is attributed a general translation, transliteration, short and long descriptions, list of automated references to the ancient texts (from Ancient Word full Reference), and more. All the content in ATLOMYs lemma pages is drawn from the Lemma Pool."
+  }
+}
