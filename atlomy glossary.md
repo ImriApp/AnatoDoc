@@ -5,99 +5,217 @@ description: 'Common term from throughout ATLOMYs documentation for creating a c
 
 ## A
 
-<details><summary>
-<strong>Ancient Author</strong></summary>
-One of the author of the ancient texts, for example, Galen, Aristotle, or Hippocrates.
+<details>
+<summary><strong>Ancient Author</strong></summary>
+An author of an ancient texts, for example, Galen, Aristotle, and Hippocrates.
 </details>
 
-<details><summary>
-<strong>Author Page</strong></summary>
-Pages on ATLOMY.com showing information about Aristotle, Galen, Hippocrates, and Celsus, which are accessed through the reference list in any lemma page
+<details>
+<summary><strong>Ancient Text</strong></summary>
+A text written in ancient times. It is the object of study in ATLOMY's research and its content is interperted as 3D models or dissections.
+</details>
+
+<details>
+<summary><strong>Ancient Word</strong></summary>
+Some inflected form of a word, attested in one or more ancient texts.
+</details>
+
+<details>
+<summary><strong>Ancient Word Full Reference</strong></summary>
+A table in Greek Lexicon DB formulating references for Ancient words according to annotations made with and imported from INCEpTION.
+</details>
+
+<details>
+<summary><strong>Ancient Word Lookup Table</strong></summary>
+A table in Greek Lexicon DB listing all Ancient Words in ATLOMY's corpus.
+</details>
+
+<details>
+<summary><strong>AMTA</strong></summary>
+Developed internally by ATLOMY, it is the first LLM specifically designed for studying the ancient medicine, anatomy, and physiology.
+</details>
+
+<details>
+<summary><strong>ATLOMY</strong></summary>
+An ERC Horizon research project studying models of anatomy, physiology, and medincine in ancient Greece.
+</details>
+
+<details>
+<summary><strong>Author Page</strong></summary>
+A page in ATLOMY.com introducing an Ancient Author.
 </details>
 
 ## B
 
 
+
 ## C
 
+<details>
+<summary><strong>Category Type</strong></summary>
+Categories of how Ancient Words relate to anatomy, physiology, and medicine.
+</details>
+
+<details>
+<summary><strong>Configuration</strong></summary>
+A process run from the Admin Dashboard that updates the Lemmas section on the Admin Dashboard to match the Lemma Pool.
+</details>
 
 ## D
 
 
+
 ## E
 
+<details>
+<summary><strong>Early Edition Bibliographies</strong></summary>
+
+</details>
+
+<details>
+<summary><strong>Elastic</strong></summary>
+
+</details>
 
 ## F
+
 
 
 ## G
 
 
+
 ## H
+
 
 
 ## I
 
+<details>
+<summary><strong>INCEpTION</strong></summary>
+We use INCEpTION for annotating Ancient Texts - that is, attributing Ancient Words with bibliographical and attributive information. These annotations are then imported to Ancient Word Full Reference on Coda.
+
+Inception hosts an AI “recommender” that facilitates the annotation process.
+</details>
 
 ## J
+
 
 
 ## K
 
 
+
 ## L
 
-<details><summary>
-<strong>Lemma</strong></summary>
+<details>
+<summary><strong>Lemma</strong></summary>
 The canonical, uninflected base form of a word,conventionally used as the dictionary headword
 </details>
 
-<details><summary>
-<strong>Lemma Pool</strong></summary>
-A Table in the Greek Lexicon DB page on Coda, which defines Lemmas. Each lemma is attributed a general translation, transliteration, short and long descriptions, list of automated references to the ancient texts (from Ancient Word full Reference), and more. All the content in Atlomy’s lemma pages is drawn from the Lemma Pool.</details>
+<details>
+<summary><strong>Lemma Pool</strong></summary>
+A Table in the Greek Lexicon DB page on Coda, which defines Lemmas. Each lemma is attributed a general translation, transliteration, short and long descriptions, list of automated references to the ancient texts (from Ancient Word full Reference), and more. All the content in Atlomy’s lemma pages is drawn from the Lemma Pool.
+</details>
 
-<details><summary>
-<strong>Lemma Page</strong></summary>
+<details>
+<summary><strong>Lemma Page</strong></summary>
 A page on ATLOMY.com explaining a lemma, containing FILL
+</details>
+
+<details>
+<summary><strong>Long Description</strong></summary>
+
 </details>
 
 ## M
 
+<details>
+<summary><strong>Modelling Instructions Items</strong></summary>
+
+</details>
+
+<details>
+<summary><strong>Modelling Instructions Sub-Items</strong></summary>
+
+</details>
+
+<details>
+<summary><strong>Model Lemma</strong></summary>
+
+</details>
+
+<details>
+<summary><strong>Model Page</strong></summary>
+
+</details>
+
+<details>
+<summary><strong>Modern Edition Bibliographies</strong></summary>
+
+</details>
 
 ## N
+
 
 
 ## O
 
 
+
 ## P
+
 
 
 ## Q
 
 
+
 ## R
 
+<details>
+<summary><strong>References - Abbriviated</strong></summary>
+
+</details>
 
 ## S
 
+<details>
+<summary><strong>Short Description</strong></summary>
+
+</details>
 
 ## T
+
+<details>
+<summary><strong>Table of Instructions</strong></summary>
+
+</details>
+
+<details>
+<summary><strong>Treatise Page</strong></summary>
+
+</details>
 
 
 ## U
 
 
+
 ## V
+
 
 
 ## W
 
 
+
 ## X
 
 
+
 ## Y
+
 
 
 ## Z
