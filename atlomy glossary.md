@@ -120,7 +120,7 @@ A Table in the Greek Lexicon DB page on Coda, which defines Lemmas. Each lemma i
 
 <details>
 <summary><strong>Lemma Page</strong></summary>
-A page on ATLOMY.com explaining a lemma, containing FILL
+A page on ATLOMY.com defining a lemma, including an in-depth analysis of how it's used in the ancient medical texts
 </details>
 
 <details>

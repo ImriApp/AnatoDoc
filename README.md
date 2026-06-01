@@ -1,6 +1,6 @@
 # The ATLOMY Documentation
 
-This is the official documentatin of ATLOMY. It is written both for the ATLOMY team members, and for the aspiring researcher interested in the digital humanities. It focuses on the pipeline of creating the Greco-Roman lexicon and 3D models.
+This is the official documentatin of ATLOMY. It is written for the ATLOMY team members, and for the aspiring researcher interested in the digital humanities. It focuses on the pipeline of creating the Greco-Roman lexicon and 3D models.
 
 ## The Project
 
