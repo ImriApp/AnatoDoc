@@ -4,17 +4,17 @@ title: 'ATLOMY App'
 
 ## Configurations
 
-Configurations keep ATLOMY.com up to date. They import updated versions of our tables in [Greek Lexicon DB](../Greek%20Lexicon%20DB/greek%20lexicon%20db.mdx) into the admin dashboard's own database. Lemma pages are created, deleted, and modified as part of this process.
+Configurations keep ATLOMY.com up to date. They import updated versions of the tables in [Greek Lexicon DB](../Greek%20Lexicon%20DB/greek%20lexicon%20db.mdx) into the admin dashboard. Lemma pages are created, deleted, and modified as a result of this process.
 
-Formerly, updating ATLOMY.com required manually exporting the Lemma Pool as a CSV file. It would be saved on AWS S3, to which the dashboard would connect for importing its data. Nowadays, an API allows direct connection from the dashboard to our workspace on Coda, making the configuration process quicker and more comprehensive.
+Formerly, updating ATLOMY.com required manually exporting each table in Greek Lexicon DB as a CSV file. These files would be saved on AWS S3 to which the dashboard would connect for importing their data. Nowadays, an API allows direct connection from the dashboard to our workspace on Coda, and it draws information only from the lemma pool, as it includes all the necessary data from the other tables. This colectively makes the configuration process quicker and more comprehensive.
 
 ### To run a configuration
 
 1. Make sure that all rows in the **Lemma Pool** are attributed a properly formatted name, translation, and transliteration. This is crucial for the configuration to run successfully.
 2. On the dashboard, enter **ATLOMY App > Configurations > Run script**.
-3. For **Content**, you can change the dates in the script to achieve a faster configuration time. By default, the script is set to update all rows in the Lemma Pool that were created since Februery 15, 2021, and all rows in the lemma pool modified since April 27, 2021. You can change these dates to more recent ones, so that only rows created or modified after them will be imported to the dashboard.
+3. For **Content**, you can change the dates in the script to achieve a faster configuration time. By default, the script `{"creation_date_offset": "02/15/2021", "update_date_offset": "04/27/2021"}` is set to update all rows in the Lemma Pool that were created since Februery 15, 2021, and all those modified since April 27, 2021. You can change these dates to more recent ones, so that only rows created or modified after them will be imported to the dashboard.
 4. For **Use Coda**, make sure “yes” is selected.
-5. For **Status**, change “stopped” to “running.”
+5. For **Status**, change “stopped” to “running.” (This will return to “stopped” automatically once the configuration is finished.)
 6. Click **Save**.
 
 After clicking save, the add_data script is run, which includes these steps:
@@ -22,48 +22,44 @@ After clicking save, the add_data script is run, which includes these steps:
 1. Elastic is updates with the additions, deletions, and changes in Greek Lexicon DB.
 2. All lemmas entries in Elastic are compared with the lemma pages in the dashboard.
 3. Based on this comparison:
-    - Lemma entries in Elastic that do not have a corresponding page in the dashboard are copied to the dashboard from Elastic.
-    - Lemma entries in Elastic that have a corresponding page in the dashboard are updated to match Elastic.
-    - Lemma entries in Elastic that were marked for deletion in the lemma pool prior to running the configuration are de-activated on the dashboard, and they will not appear in search results nor in responses from the Lemmas API.
+    * Lemma entries in Elastic that do not have a corresponding page in the dashboard are copied to the dashboard from Elastic.
+    * Lemma entries in Elastic that have a corresponding page in the dashboard are updated to match Elastic.
+    * Lemma entries in Elastic that were marked for deletion in the lemma pool prior to running the configuration are de-activated on the dashboard, and they will not appear in search results nor in responses from the Lemmas API.
 
 ATLOMY.com will be fully updated within 10-15 minutes of clicking save.
 
-Once a configuration is finished, its status automatically returns from “running” to “stopped”.
-
 ## Feedbacks
 
-Feedbacks entered by ATLOMY's users go into this inbox. Each item in this list contains the user's email address, their institute (if entered by them), the content of their feedback, and checkmarks for following up on their query.
+This is an inbox for feedbacks entered by ATLOMY's users. Each item is a response, containing the responser's email address, their institute (if them entered it), the content of their feedback, and checkmarks for following up on their input.
 
 ## Jobs
 
-Jobs are JSON files created automatically in the admin dashboard after each configuration. They report on the successes, warnings of failure, or failures in the configuration process.
+Jobs are reports (in JSON format) created automatically in the admin dashboard after each **configuration**. They report on the successes, warnings of failure, or failures in the configuration process.
 
-Warnings of failure are common. They stem from lemmas in the Lemma Pool not being attributed fully, for example, when they lack short or long descriptions, or a list of references. Failures, on the other hand, stem specifically from the lack of a lemma's name, translation, or transliteration (read further on metadata in the Coda Guide).
+Warnings of failure happen when lemma entries lack complete metadata, for example, when they lack a short or long description, or a list of references. Failures, however, happen specifically when a lemma entry lacks a name, translation, or transliteration (read further on metadata in the [Coda Guide](../Greek%20Lexicon%20DB/lemma%20pool.mdx)).
 
 ## Lemmas
 
-**Configurations** import all lemmas in the Lemma Pool into the dashboard, creating a corresponding list of **lemma pages** in this section. Currently, lemma pages cannot be created manually on the dashboard, but only imported.
+This section of the dashboard contains all lemma pages imported from the Lemma Pool. It is not used for creating, deleting or modifying lemma pages - but to format **short and long descriptions** with rich text (bolds, italics, underlines, colors, and more), which is not imported as part of the **configuration** process.
 
-Since textual data imported to the dashboard is imported in plain text, and since lemmas’ **short and long descriptions** need be formatted in rich text (with bolds, italics, underlines, colors, etc.), this section is mainly used for reformatting them, using the text editor.
+The **Is Active** field in the list of Lemma Pages is linked to the **Marked for Deletion** field of the Lemma pool. After checking the box under Marked for deletion in one of the rows of the lemma pool, running a configuration results in the de-activation of that lemma's page on the dashboard. Such a lemma will not appear in search results nor in responses from the Lemmas API.
 
-The **Is Active** field of each lemma is linked to the **Marked for Deletion** field on the Lemma pool. When checking the box under Marked for deletion for one of the items in the lemma pool, running a configuration will result in de-activation of that lemma on the dashboard. Such a lemma will not appear in search results nor in responses from the Lemmas API.
-
-Note: lemma pages which were created manually in the admin dashboard, and are then created separately as a row in the Lemma Pool, will be updated rather than get duplicated when running a configuration. However, creating or editing lemma pages directly through the dashboard is strongly discouraged, the short and long description fields being the only exception. Deleting a lemma page will break any reference to its lemma. This includes URLs, model lemmas, and search results, which will no longer function or return results. (For more on creating and updating lemma items, read on Configurations).
+Note: Lemma Pages which were created manually in the admin dashboard, and then created separately as a row in the Lemma Pool, will be updated rather than get duplicated when running a configuration. However, creating or editing lemma pages in the dashboard in a way other than formatting rich text is strongly discouraged. Deleting a Lemma Page will break any reference to its lemma. This includes URLs, Model Lemmas, and search results, which will no longer function or return results.
 
 ## Model lemmas
 
-This section lists connections between models and lemmas - each row is a single connection between a lemma page and a model page, reflecting the list of connections in **Modelling Instructions Sub-Items** in **Coda > Visualization**.
+This section lists connections between models and lemmas - each row is a single connection between a lemma page and a model page, reflecting the list of connections in **Modelling Instructions Sub-Items** in [Visualization](../Visualizations/visualizations.mdx).
 
-These connections are shown both on model pages - when looking into a body part - and lemma pages - in the list of relevant models.
+These connections are seen when reading a lemma page and browsing the list of models related to it, and when looking into a 3D Model and finding the lemmas depicting the body parts within it.
 
-### To connect a model page to a lemma page:
+### To connect a model page and a lemma page:
 
 1. On the dashboard, enter **Model Lemmas**.
 2. Click **Add Model Lemma** on the upper right corner.
 3. Select the **model page** and the **lemma page** that you want to connect.
 4. Click **Save**.
 
-The connection of the lemma to its specific body part occurs automatically afterwards, as the 3D Object is already named the same by the 3D modeler.
+The connection of the lemma to its specific body part in a 3D Model occurs automatically afterwards, as the 3D Object is already named the same by the 3D modeler.
 
 ## Model mapping (deprecated)
 
