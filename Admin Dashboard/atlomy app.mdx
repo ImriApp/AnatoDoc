@@ -4,28 +4,35 @@ title: 'ATLOMY App'
 
 ## Configurations
 
-Configurations keep ATLOMY.com up to date. They import data such as bibliographies, Ancient word references, and lemma information from ATLOMY's tables on Coda into ATLOMY's webpages according to their templates.
+Configurations keep ATLOMY.com up to date. They import updated versions of our tables in [Greek Lexicon DB](../Greek%20Lexicon%20DB/greek%20lexicon%20db.mdx) into the admin dashboard's own database. Lemma pages are created, deleted, and modified as part of this process.
 
-Initially, a new CSV file was exported for each newly updated table. It was then saved in a designated location on AWS S3, to which the dashboard would connect for import the data from. Nowadays, an API allows direct connection of the dashboard to Coda. Data is imported from all Coda tables at once, allowing easier and more comprehensive updates to the website.
+Formerly, updating ATLOMY.com required manually exporting the Lemma Pool as a CSV file. It would be saved on AWS S3, to which the dashboard would connect for importing its data. Nowadays, an API allows direct connection from the dashboard to our workspace on Coda, making the configuration process quicker and more comprehensive.
 
 ### To run a configuration
 
-1. Make sure that all the rows of the **Lemma Pool** in Coda are attributed properly formatted name, translation, and transliteration.
-2. On the dashboard, enter **Atlomy app > Configurations > Run script**.
-3. Under **Use Coda**, make sure “yes” is selected.
-4. Under **Status**, change “stopped” to “running.”
-5. Click **Save**.
+1. Make sure that all rows in the **Lemma Pool** are attributed a properly formatted name, translation, and transliteration. This is crucial for the configuration to run successfully.
+2. On the dashboard, enter **ATLOMY App > Configurations > Run script**.
+3. For **Content**, you can change the dates in the script to achieve a faster configuration time. By default, the script is set to update all rows in the Lemma Pool that were created since Februery 15, 2021, and all rows in the lemma pool modified since April 27, 2021. You can change these dates to more recent ones, so that only rows created or modified after them will be imported to the dashboard.
+4. For **Use Coda**, make sure “yes” is selected.
+5. For **Status**, change “stopped” to “running.”
+6. Click **Save**.
 
-After clicking save, the following process occurs:
+After clicking save, the add_data script is run, which includes these steps:
 
-1. On the backend, the add_data script is run, which updated Elastic with new changes and additions.
-2. The add_lemma script is run: all objects in Elastic are compared with the items in the Lemma section of the dashboard. Lemmas in Elastic which are not listed in the dashboard are created in the dashboard, and lemmas which are listed are updated to match Elastic.
+1. Elastic is updates with the additions, deletions, and changes in Greek Lexicon DB.
+2. All lemmas entries in Elastic are compared with the lemma pages in the dashboard.
+3. Based on this comparison:
+    - Lemma entries in Elastic that do not have a corresponding page in the dashboard are copied to the dashboard from Elastic.
+    - Lemma entries in Elastic that have a corresponding page in the dashboard are updated to match Elastic.
+    - Lemma entries in Elastic that were marked for deletion in the lemma pool prior to running the configuration are de-activated on the dashboard, and they will not appear in search results nor in responses from the Lemmas API.
 
-Atlomy will be completely updated within 10-15 minutes of clicking save. Once a configuration is finished, its status automatically switches from “running” back to “stopped”.
+ATLOMY.com will be fully updated within 10-15 minutes of clicking save.
+
+Once a configuration is finished, its status automatically returns from “running” to “stopped”.
 
 ## Feedbacks
 
-Feedbacks entered by ATLOMY’s users go into this inbox. Each item in this list contains the user’s email address, their institute (if entered by them), the content of their feedback, and checkmarks for following up on their query.
+Feedbacks entered by ATLOMY's users go into this inbox. Each item in this list contains the user's email address, their institute (if entered by them), the content of their feedback, and checkmarks for following up on their query.
 
 ## Jobs
 
