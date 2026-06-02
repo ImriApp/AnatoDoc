@@ -36,65 +36,80 @@ This is an inbox for feedbacks entered by ATLOMY's users. Each item is a respons
 
 Jobs are reports (in JSON format) created automatically in the admin dashboard after each **configuration**. They report on the successes, warnings of failure, or failures in the configuration process.
 
-Warnings of failure happen when lemma entries lack complete metadata, for example, when they lack a short or long description, or a list of references. Failures, however, happen specifically when a lemma entry lacks a name, translation, or transliteration (read further on metadata in the [Coda Guide](../Greek%20Lexicon%20DB/lemma%20pool.mdx)).
+*Warnings of failure* happen when lemma entries lack complete metadata, for example, when they lack a short or long description, or a list of references. *Failures*, however, happen specifically when a lemma entry lacks a name, translation, or transliteration (read further on metadata in the [Coda Guide](../Greek%20Lexicon%20DB/lemma%20pool.mdx)).
 
 ## Lemmas
 
-This section of the dashboard contains all lemma pages imported from the Lemma Pool. It is not used for creating, deleting or modifying lemma pages - but to format **short and long descriptions** with rich text (bolds, italics, underlines, colors, and more), which is not imported as part of the **configuration** process.
+This section of the dashboard contains all lemma pages imported from the Lemma Pool. It is used solely to add typography to **short and long descriptions**, which is not imported as part of the **configuration** process.
 
-The **Is Active** field in the list of Lemma Pages is linked to the **Marked for Deletion** field of the Lemma pool. After checking the box under Marked for deletion in one of the rows of the lemma pool, running a configuration results in the de-activation of that lemma's page on the dashboard. Such a lemma will not appear in search results nor in responses from the Lemmas API.
+*Creating* or *editing* lemma pages in the dashboard in a way other than adding typography is possible but strongly discouraged. It should be created in the lemma pool and then imported to the dashboard through a configuration.
 
-Note: Lemma Pages which were created manually in the admin dashboard, and then created separately as a row in the Lemma Pool, will be updated rather than get duplicated when running a configuration. However, creating or editing lemma pages in the dashboard in a way other than formatting rich text is strongly discouraged. Deleting a Lemma Page will break any reference to its lemma. This includes URLs, Model Lemmas, and search results, which will no longer function or return results.
+*Deleting* a Lemma Page will break any reference to its lemma. This includes URLs, Model Lemmas, and search results, which will no longer function or return results. Instead, lemma pages are de-activated. To de-activate a lemma page, its lemma should be marked for deletion in the lemma pool, and then a configuration should be run. This way, the lemma page will not appear in search results nor in responses from the Lemmas API.
 
 ## Model lemmas
 
-This section lists connections between models and lemmas - each row is a single connection between a lemma page and a model page, reflecting the list of connections in **Modelling Instructions Sub-Items** in [Visualization](../Visualizations/visualizations.mdx).
+This section lists connections between models and lemmas - each row is a single connection between a lemma page and a model page, reflecting the list of connections in **Modelling Instructions Sub-Items** in [Visualization](../Visualizations/visualizations.mdx#backend-tables).
 
-These connections are seen when reading a lemma page and browsing the list of models related to it, and when looking into a 3D Model and finding the lemmas depicting the body parts within it.
+These connections tell lemma pages to link to models that feature them, and they tell model pages to link to lemmas that are depicted in them. This is crucial for the user experience of ATLOMY.com, as it allows users to easily navigate between lemma and model pages.
 
 ### To connect a model page and a lemma page:
 
-1. On the dashboard, enter **Model Lemmas**.
+1. On the dashboard, enter **ATLOMY App > Model Lemmas**.
 2. Click **Add Model Lemma** on the upper right corner.
 3. Select the **model page** and the **lemma page** that you want to connect.
 4. Click **Save**.
 
-The connection of the lemma to its specific body part in a 3D Model occurs automatically afterwards, as the 3D Object is already named the same by the 3D modeler.
+Objects in the 3D model that are named the same as the lemma page will link to it when clicked on.
 
 ## Model mapping (deprecated)
 
-This section allowed linking two models to each other in a parent-children relationship. That is, a model and a related sub model or layer.
+This section allowed mapping 3D models in a models-and-sub-models relationship. This functionality is deprecated.
+
+### To creat a models-submodels relationship:
+
+1. On the dashboard, enter **ATLOMY App > Model Mapping**.
+2. Click **Add Model Mapping** on the upper right corner.
+3. Select the **Parent Model** and the **Sub-model** that you want to connect.
+4. Select whether the sub-model is a *layer* or a *part* of the parent model.
+5. Enter your name as the **Creator** of this relationship.
+6. Click **Save**.
 
 ## Models
 
-Model pages contain 3D models and model information, and they are created and managed in this section.
+**Model Pages** are the pages that show 3D models and their information. They are created and managed in this section.
 
-Initially, 3D models and model thumbnails were uploaded to the admin dashboard. Nowadays, they are stored on **AWS S3**, from which they are retrieved when browsing ATLOMY and entering a model page.
-
-To create a new model page:
+### To create a new model page:
 
 1. On the dashboard, enter **Atlomy App > Models**.
 2. Click on **Add model** on the upper right corner.
-3. Then enter:
-    * **Model Name**, following the formula ”[ancient author] - [system name]” (e.g. “Galen - Hindlimb”)
-    * **URL** for the 3D model stored on AWS S3
-    * **URL**s for the thumbnails stored on AWS S3. There are three thumbnail sizes - one for the home page (168x140px), one for a detailed view (246x180px), and one for search (50x30px).
-    * The model's **Description** as it was written by the philologist
-    * The **Ancient Author**'s name
-    * Zoom ration and position
-    * The **Author**'s name (i.e. the philologist, not the ancient author)
-4. Choose whether the model is ready for featuring in ATLOMY's home page.
-5. Click **Save**.
+3. Enter basic information:
+    * **Model Name**, following the formula `[ancient author] - [system name]` (for example, `Galen - Hindlimb`).
+    * **URL** of the location of the 3D model in **AWS S3**.
+    * The **Ancient Author**'s name.
+    * The **Author**'s name (the researcher who designed the model).
+4. Choose wheteher the model is ready for publishing in **Show in home**.
+5. Enter images:
+    * **URL**s of the thumbnails stored on **AWS S3**. There are three thumbnail sizes - one for the home page (168x140px), one for a detailed view in the lemma pages (246x180px), and one for search (50x30px).    
+    * The model's **Description** as it was written by the philologist or [AMTA](../AMTA/amta.mdx).
+    * Zoom ration and position.
+6. Click **Save**.
 
 ## Pages
 
-As **Lemma Pages** and **Model Pages** are managed in their own sections, this section manages all other types of pages:
+This sections manages the pages of ATLOMY.com that are not lemma pages nor model pages.
 
-* **Author Pages** show information about Aristotle, Galen, Hippocrates, and Celsus, and they are accessed through the 
-reference list in any lemma page.
-* **Treatise Pages** show information about treatises, such as Hippocrates' On the Heart and Aristotle's History of Animals, and they are accessed through the reference list in any lemma page.
-* **Other Pages** are independent of lemma information and are accessed through the home page. Examples are the **How to use ATLOMY** and **About** pages.
+* **Author Pages** show information about Aristotle, Galen, Hippocrates, and Celsus, and they are accessed by the user through the reference list in any lemma page.
+* **Treatise Pages** show information about treatises, such as Hippocrates' On the Heart and Aristotle's History of Animals, and they are accessed by the user through the reference list in any lemma page.
+* **Other Pages** are independent of the 3D Atlas and the lexicon, and they are accessed by the user through the home page. Examples of these pages are the **How to use ATLOMY** and **About** pages.
 
 ## References (deprecated)
 
-This section allows linking models to specific text references. This functionality is deprecated and open to redevelopment.
+This section allows assigning references to **Model Mappings**. This functionality is deprecated.
+
+### To add a reference:
+
+1. On the dashboard, enter **ATLOMY App > References**.
+2. Click on **Add reference** on the upper right corner.
+3. Select the **Model Mapping** that you want to assign the reference to.
+4. Enter the **Reference** entry.
+5. Click **Save**.

@@ -4,14 +4,84 @@ title: Authentication and Authorization
 
 ## Groups
 
-This section allows defining sets of permissions needed for conducting certain procedures on the dashboard, such as managing lemma or model pages. These sets of permissions are allocated to groups of users, saving the need of granting each permission to each user one-by-one.
+This section allows grouping permissions needed for performing a series of actions on the dashboard. These groups can then be assigned to users, saving the need of granting them each permission one-by-one.
 
-Currently, Groups include **content editors**, **model description editors**, and **model lemma editors**. Users can be granted permissions to **add**, **view**, **change**, or **delete** items/item attributes across the dashboard.
+Users can be granted permissions to **add**, **change**, **delete**, and **view** all sorts of items in the dashboard.
 
-To create a set of permissions, enter **Authentication & Authorization > Groups** and click **Add Group**. Give the group a name and define its permissions by transferring them from the list of **Available Permissions** to the list of **Chosen Permissions** and vice versa.
+Currently, there are three Groups:
+
+<table>
+    <th>
+        Group
+    </th>
+    <th>
+        Task to be Done
+    </th>
+    <th>
+        Permissions
+    </th>
+    <tr>
+        <td>
+            Content Editors
+        </td>
+        <td>
+            Manage Lemma Pages and Other Pages
+        </td>
+        <td>
+            `Atlomyapp|lemma|can add lemma` `Atlomyapp|lemma|can change lemma` `Atlomyapp|lemma|can delete lemma` `Atlomyapp|lemma|can view lemma` `Atlomyapp|model|can view model` `Atlomyapp|page|can add page` `Atlomyapp|page|can change page` `Atlomyapp|page|can delete page` `Atlomyapp|page|can view page`
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Model Description Editors
+        </td>
+        <td>
+            Manage model descriptions
+        </td>
+        <td>
+            `Atlomyapp|lemma|can add lemma` `Atlomyapp|lemma|can change lemma` `Atlomyapp|lemma|can delete lemma` `Atlomyapp|lemma|can view lemma` `Atlomyapp|model mapping|can add model mapping` `Atlomyapp|model mapping|can change model mapping` `Atlomyapp|model mapping|can delete model mapping` `Atlomyapp|model mapping|can view model mapping` `Atlomyapp|reference|can add reference` `Atlomyapp|reference|can change reference` `Atlomyapp|reference|can delete reference` `Atlomyapp|reference|can view reference` `modelauthor|can add modelauthor` `modelauthor|can change modelauthor` `modelauthor|can delete modelauthor` `modelauthor|can view modelauthor` `modeldescription|can add modeldescription` `modeldescription|can change modeldescription` `modeldescription|can delete modeldescription` `modeldescription|can view modeldescription` `submodels|can add sub models` `submodels|can change sub models` `submodels|can delete sub models` `submodels|can view sub models` `Content Types|content type|can add content type` `Content Types|content type|can change content type` `Content Types|content type|can delete content type` `Content Types|content type|can view content type` `attachment|can add attachment` `attachment|can change attachment` `attachment|can delete attachment` `attachment|can view attachment` `Sessions|session|can add session` `Sessions|session|can change session` `Sessions|session|can delete session` `Sessions|session|can view session`
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Model Lemma Editing
+        </td>
+        <td>
+            Manage Model Lemmas
+        </td>
+        <td>
+            `Atlomyapp|model lemma|can add model lemma` `Atlomyapp|model lemma|can change model lemma` `Atlomyapp|model lemma|can delete model lemma` `Atlomyapp|model lemma|can view`
+        </td>
+    </tr>
+</table>
+
+### To create a group of permissions:
+1. Enter **Authentication & Authorization > Groups**.
+2. Click **Add Group**.
+3. Enter the group **Name**. 
+4. Define the set of permissions by transferring them from **Available permissions** to **Chosen permissions**.
 
 ## Users
 
-This section allows creating new user accounts and assigning permission to each user. To create a user account, on the dashboard, enter **Authentication & Authorization > Users** and click **Add User**. Enter a username and password and click **Save**.
+This section allows creating user accounts and editing permissions for users.
 
-To edit permissions and get further information about the user account, re-enter the user’s entry. You will now be able to edit personal information, grant permissions and assign the user to groups, and define user status and dates.
+### To create a user account:
+1. On the dashboard, enter **Authentication & Authorization > Users**.
+2. Click **Add User** on the upper right corner. 
+3. Enter the user's username and
+4. Choose **Password based authentication**.
+5. Enter a password for the user.
+6. re-enter the password for confirmation.
+7. Click **Save**.
+
+### To add more personal information to the user and edit their permissions:
+
+1. Enter **Authentication & Authorization > Users > [user's username]**.
+2. Add the user's **First and Last name**.
+3. Add the user's **Email Address**.
+4. **Activate/Deactivate** the user's account. This is preferable to deleting the user account.
+5. Validate/invalidate the user's **Staff Status**. This keeps the account active but prevents the user from accessing the dashboard.
+6. Grant/deny the user **Superuser Status**. This gives the user access to all permissions.
+7. Assign the user to one or more **Groups**.
+8. Assign the user individual **Permissions**.
+9. Click **Save**.
