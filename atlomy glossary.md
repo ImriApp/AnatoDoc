@@ -63,7 +63,10 @@ A process run from the Admin Dashboard that updates the Lemmas section on the Ad
 
 ## D
 
-
+<details>
+<summary><strong>Dissection</strong></summary>
+FILL
+</details>
 
 ## E
 
