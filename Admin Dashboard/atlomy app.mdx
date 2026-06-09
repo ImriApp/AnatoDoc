@@ -4,7 +4,7 @@ title: 'ATLOMY App'
 
 ## Configurations
 
-Configurations keep ATLOMY.com up to date. They import updated versions of the tables in [Greek Lexicon DB](../Greek%20Lexicon%20DB/greek%20lexicon%20db.mdx) into the admin dashboard. Lemma pages are created, deleted, and modified as a result of this process.
+`Configurations` keep ATLOMY.com up to date. They import updated versions of the tables in [Greek Lexicon DB](../Greek%20Lexicon%20DB/greek%20lexicon%20db.mdx) into the admin dashboard. Lemma pages are created, deleted, and modified as a result of this process.
 
 Formerly, updating ATLOMY.com required manually exporting each table in Greek Lexicon DB as a CSV file. These files would be saved on AWS S3 to which the dashboard would connect for importing their data. Nowadays, an API allows direct connection from the dashboard to our workspace on Coda, and it draws information only from the lemma pool, as it includes all the necessary data from the other tables. This colectively makes the configuration process quicker and more comprehensive.
 
