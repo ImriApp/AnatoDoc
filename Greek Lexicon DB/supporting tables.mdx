@@ -4,20 +4,56 @@ title: 'Supporting Tables'
 
 ## Function
 
-Supporting Tables define fundamental and recurring entries for other table to use, such as abbreviated references, early and modern edition bibliographies, languages, category types, and ancient words. These entities are the building blocks of the higher-level tables, Ancient Words full Reference and the Lemma Pool.
+Supporting Tables define fundamental entries that recure across the database, such as Abbreviated References, Early and Modern Edition Bibliographies, Ancient Languages, Category Types, Ancient Words, and their Automated References. These entities are the building blocks of the Lemma Pool, which collects all their information.
 
 ## Reference Tables
 
-FILL
+### Abbreviated References
+
+Lists the standard abbreviated names of ancient texts in ATLOMY's corpus, with the standard abbreviated names of their ancient authors. Every ancient text new to the ATLOMY corpus must first be registered in this table.
 
 ## Bibliography Tables
 
-FILL
+### Early Edition Bibliographies
+
+Lists commonly known early publications of the texts in References - Abbreviated. This table is used to attribute the publication of a text in the automated references of Ancient Word Full Reference, and to link those references to the bibliography section of the lemma pages.
+
+### Modern Edition Bibliographies
+
+Lists the modern (scientific) publications of the texts in References - Abbreviated. This table is used to attribute the publication of a text in the automated references of Ancient Word Full Reference, and to link those references to the bibliography section of the lemma pages.
+
+### Special Cases 3rd level editions
+
+Lists additional publications of some texts in References - Abbreviated.
+
+### Fragment Edition Bibliographies
+
+Lists publications of the treatise *Fragments*.
 
 ## Ancient Word Tables
 
-FILL
+### Ancient Words Lookup Table
+
+Lists all Ancient words in Atlomy's corpus.
+
+### Ancient Words Full Reference
+
+Gathers bibliographical and attributive information about Ancient words and automatically generates bibliographical references for them. This table is the source of all automated references to Ancient words in the Lemma Pool, and it is the main source of content for the Lemma Pages. It is the table to which annotations from INCEpTION are imported and transformed into automated references.
 
 ## Other Tables
 
-FILL
+### Modern Terms (deprecated)
+
+Defined possible related terms for lemmas.
+
+### Synonyms (deprecated)
+
+Defined possible synonyms for lemmas. It was replaced by the “Synonyms” column in the Lemma Pool.
+
+### Source Languages
+
+Lists the languages of origin for the Ancient words in the corpus.
+
+### Category Types
+
+Defines categories for how ancient words are relevant to anatomy and medicine (such as Body Parts, Topography, Action Verbs, Tools, etc.)
