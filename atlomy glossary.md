@@ -127,6 +127,11 @@ A page on ATLOMY.com defining a lemma, including an in-depth analysis of how it'
 </details>
 
 <details>
+<summary><strong>Lemma Row</strong></summary>
+FILL
+</details>
+
+<details>
 <summary><strong>Long Description</strong></summary>
 
 </details>
