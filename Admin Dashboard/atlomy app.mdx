@@ -4,17 +4,24 @@ title: 'ATLOMY App'
 
 ## Configurations
 
-`Configurations` keep ATLOMY.com up to date. They import updated versions of the tables in `Greek Lexicon DB` into the admin dashboard. `Lemma pages` are created, deleted, and modified as a result of this process.
+Configurations keep ATLOMY.com up to date. They import updated versions of the tables in `Greek Lexicon DB` into the admin dashboard. This process creates, deletes, and modifies `Lemma Pages` in ATLOMY.com.
 
-Formerly, updating ATLOMY.com required manually exporting each table in `Greek Lexicon DB` as a CSV file. These files would be saved on `AWS S3` to which the dashboard would connect for importing their data. Nowadays, an API allows direct connection from the dashboard to our workspace on Coda, and it draws information only from the `Lemma Pool`, as it includes all the necessary data from the other tables. This colectively makes the configuration process quicker and more comprehensive.
+Formerly, updating ATLOMY.com required manually exporting each table in Greek Lexicon DB as a CSV file. These files would be saved on `AWS S3` to which the dashboard would connect for importing their data. Nowadays, an API allows direct connection from the dashboard to our workspace on Coda, and it draws information only from the `Lemma Pool`, as it includes all the necessary data from the other tables. This colectively makes the configuration process quicker and more comprehensive.
 
 ### To run a configuration
 
-1. Make sure that all rows in the `Lemma Pool` are attributed a properly formatted `Name`, `Translation`, and `Transliteration`. This is crucial for the configuration to run successfully.
-2. On the dashboard, enter **ATLOMY App > Configurations > Run script**.
-3. For `Content`, you can change the dates in the script to achieve a faster configuration time. By default, the script `{"creation_date_offset": "02/15/2021", "update_date_offset": "04/27/2021"}` is set to update all rows in the `Lemma Pool` that were created since February 15, 2021, and all those modified since April 27, 2021. You can change these dates to more recent ones, so that only rows created or modified after them will be imported to the dashboard.
-4. For `Use Coda`, make sure “yes” is selected.
-5. For `Status`, change “stopped” to “running”. (This will return to “stopped” automatically once the configuration is finished.)
+1. Make sure that all rows in the Lemma Pool are attributed a properly formatted `Name`, `Translation`, and `Transliteration`. This is crucial for the configuration to run successfully.
+2. On the dashboard, enter `ATLOMY App > Configurations > Run script`.
+3. In `Content`, Change the dates in the script to achieve a faster configuration time:
+
+```
+{"creation_date_offset": "02/15/2021", "update_date_offset": "04/27/2021"}
+```
+
+This default script sets to update all rows in the Lemma Pool that were created since February 15, 2021, and all those modified since April 27, 2021. You can change these dates to more recent ones, so that only rows created or modified since them will be imported to the dashboard.
+
+4. For `Use Coda`, make sure *yes* is selected.
+5. For `Status`, change *stopped* to *running*. (This will return to *stopped* automatically once the configuration is finished.)
 6. Click `Save`.
 
 After clicking save, the `add_data` script is run, which includes these steps:
