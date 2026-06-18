@@ -6,11 +6,11 @@ title: 'Dissections'
 
 Dissections is where we document our reenactments of the surgical procedures described in Galen's texts. The documentation is based on the information we have gathered from our analysis of the texts, and it includes instructions, translations, images, videos, and observations from performing the reenactments.
 
-Dissections is linked to Ancient Dissection - Re-enacted, an additional file on Coda which curates dissections data into per-procedure dashboards. Ancient Dissection - Re-enacted is embedded in the (Re-enactment Page)[https://www.atlomy.com/re-enactment] in ATLOMY.com..
+Dissections is linked to Ancient Dissection - Re-enacted, a seperate file on Coda which curates the data from Dissections into per-procedure dashboards. Ancient Dissection - Re-enacted is embedded in the (Re-enactment Page)[https://www.atlomy.com/re-enactment] in ATLOMY.com.
 
-After a dissection is performed, a new page is created for it in Dissections, with a table for documenting all steps, texts, interpretations, photos, and videos from performing the procedure.
+After a reenactment is performed, a new page is created for it in Dissections, with a table for documenting all steps, texts, interpretations, photos, and videos from performing the procedure.
 
-Each table is built a bit differently, but shares some key columns:
+Each reenactemnt table is built a bit differently, but they all shares some key columns:
 
 <table>
     <tr>
@@ -18,15 +18,15 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Step</strong>
         </td>
         <td>
-            The order of steps throughout the reenactment
+            The ordinal position of this step within the full sequence of steps in the procedure; unique per procedure - does not reset
         </td>
     </tr>
     <tr>
         <td>
-            <strong>Sub-Step</strong>
+            <strong>Substep</strong>
         </td>
         <td>
-            The order of sub-steps throughout the reenactment
+            The ordinal position of this substep within the full sequence of substeps belonging to its parent step; resets to 1 at each new parent step
         </td>
     </tr>
     <tr>
@@ -34,7 +34,7 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Instruction</strong>
         </td>
         <td>
-            The instruction for this sub-step, based on our analysis of a particular passage in Galen's text
+            The instruction of this substep, based on our analysis of a particular passage in Galen's text
         </td>
     </tr>
     <tr>
@@ -42,7 +42,7 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Translation</strong>
         </td>
         <td>
-            Our English translation of the passage from Galen's texts, on which the instruction is based
+            Our English translation of the passage from Galen's texts, on which this substep's instruction is based
         </td>
     </tr>
     <tr>
@@ -50,7 +50,7 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Greek Texts</strong>
         </td>
         <td>
-            The original greek passage on which the instruction is based
+            The original greek passage on which this substep's instruction is based
         </td>
     </tr>
     <tr>
@@ -58,7 +58,7 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Images</strong>
         </td>
         <td>
-            Still images of this sub-step from our reenactment
+            Still images of this substep taken at our reenactment
         </td>
     </tr>
     <tr>
@@ -66,7 +66,7 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Step Video Clip</strong>
         </td>
         <td>
-            A video of this sub-step from the reenactment (cut from the full dissection video, which is documented in the next row)
+            A video of this substep as it was preformed at our reenactment (cut from the video of the entire step, which is documented in the next row)
         </td>
     </tr>
     <tr>
@@ -74,15 +74,7 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Full Dissection Step Timecode</strong>
         </td>
         <td>
-            A video of the entire step or a set of steps from the reenactment
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>3D View</strong>
-        </td>
-        <td>
-            FILL
+            A video of the entire step as it was performed at out reenactment, including all its substeps
         </td>
     </tr>
     <tr>
@@ -90,7 +82,7 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Observations</strong>
         </td>
         <td>
-            FILL
+            Any observation on this substep made by the physician, anatomist, or researcher after performing it
         </td>
     </tr>
     <tr>
@@ -98,15 +90,9 @@ Each table is built a bit differently, but shares some key columns:
             <strong>Publication Instructions</strong>
         </td>
         <td>
-            FILL
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Step feedback Button</strong>
-        </td>
-        <td>
-            FILL
+            Instructions and suggestions regarding how and what to include in the publication that reviews this reenactment
         </td>
     </tr>
 </table>
+
+See the (Peritoneum)[https://coda.io/d/_dllGY_uUlp2/Dissection-Peritoneum-26-3-24_suhknJPS#Peritoneum-26-3-24_tuQwiBhX], (Hindlimb)[https://coda.io/d/_dllGY_uUlp2/Dissection-Hindlimb-27-3-24_su0uwSUz#Hindlimb-27-3_tuwxnbUs], and (Brain)[https://coda.io/d/_dllGY_uUlp2/Dissection-Brain-28-3-25_su9ro_HQ#Brain-28-3-25_tuxbMmwq] tables for reference, you can copy one of them instead of creating one anew for documenting a new reenactment.

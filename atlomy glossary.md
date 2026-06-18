@@ -11,6 +11,11 @@ An author of an ancient texts, for example, Galen, Aristotle, and Hippocrates.
 </details>
 
 <details>
+<summary><strong>Ancient Dissection - Re-enacted</strong></summary>
+A file on Coda linked to the Dissections database and curates the data from it into per-procedure dashboards; it is embedded in the Re-enactment page in Atlomy.com
+</details>
+
+<details>
 <summary><strong>Ancient Text</strong></summary>
 A text written in ancient times. It is the object of study in ATLOMY's research and its content is interperted as 3D models or dissections.
 </details>
@@ -64,8 +69,13 @@ A process run from the Admin Dashboard that updates the Lemmas section on the Ad
 ## D
 
 <details>
-<summary><strong>Dissection</strong></summary>
-FILL
+<summary><strong>Dissections</strong></summary>
+A database on Coda where reenactments of the surgical procedures described in Galen's texts are documented, including instructions, translations, images, videos, and observations from performing them
+</details>
+
+<details>
+<summary><strong>Dissection Table</strong></summary>
+A table on DIssections where a single reenactments is documented, including steps, texts, interpretations, photos, and videos from performing the procedure
 </details>
 
 ## E
@@ -182,6 +192,11 @@ FILL
 ## R
 
 <details>
+<summary><strong>Reenactment</strong></summary>
+A procedure done by the Atlomy team mimmicking the surgical procedures described in Galen's texts (FILL NOTE)
+</details>
+
+<details>
 <summary><strong>References - Abbriviated</strong></summary>
 
 </details>
@@ -191,6 +206,16 @@ FILL
 <details>
 <summary><strong>Short Description</strong></summary>
 
+</details>
+
+<details>
+<summary><strong>Substep (Dissections)</strong></summary>
+Simple, single-verb actions done by the physician during the reenactment procedure; these actions could either relate to operation or sensation
+</details>
+
+<details>
+<summary><strong>Step (Dissections)</strong></summary>
+A collection of Substeps that surround a specific organ of the body
 </details>
 
 ## T
