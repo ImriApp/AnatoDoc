@@ -193,7 +193,7 @@ FILL
 
 <details>
 <summary><strong>Reenactment</strong></summary>
-A procedure done by the Atlomy team mimmicking the surgical procedures described in Galen's texts (FILL NOTE)
+A procedure done by the Atlomy team, mimmicking the surgical procedures described in Galen's texts (These procedures were approved by the strict ethical screening of the European Research Council. The animals were not euthanised for these experiments.)
 </details>
 
 <details>
