@@ -2,9 +2,9 @@
 title: 'Supporting Tables'
 ---
 
-## Function
+## Purpose
 
-Supporting Tables define fundamental entries that recure across the database, such as Abbreviated References, Early and Modern Edition Bibliographies, Ancient Languages, Category Types, Ancient Words, and their Automated References. These entities are the building blocks of the Lemma Pool, which collects all their information.
+Supporting Tables define recurring entities used across the Lexicon DB, including references, bibliographies, source languages, category types, and ancient words. These tables are the structural foundation for Ancient Word Full Reference and, ultimately, the Lemma Pool.
 
 ## Reference Tables
 
@@ -14,7 +14,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Abbriviated Reference
         </td>
         <td>
-            Lists the standard abbreviated names of ancient texts in ATLOMY's corpus, with the standard abbreviated names of their ancient authors. Every ancient text new to the ATLOMY corpus must first be registered in this table.
+            Lists the standardized abbreviated names of ancient texts in ATLOMY's corpus and the standardized abbreviations of their authors. Every new text must be registered here before downstream use.
         </td>
     </tr> 
 </table>
@@ -27,7 +27,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Early Edition Bibliographies
         </td>
         <td>
-            Lists commonly known early publications of the texts in References - Abbreviated. This table is used to attribute the publication of a text in the automated references of Ancient Word Full Reference, and to link those references to the bibliography section of the lemma pages.
+            Lists commonly used early publications of texts registered in Abbriviated Reference. Used to attribute publication metadata in Ancient Word Full Reference and to support bibliography linking on lemma pages.
         </td>
     </tr>
     <tr>
@@ -35,7 +35,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Modern Edition Bibliographies
         </td>
         <td>
-            Lists the modern (scientific) publications of the texts in References - Abbreviated. This table is used to attribute the publication of a text in the automated references of Ancient Word Full Reference, and to link those references to the bibliography section of the lemma pages.
+            Lists modern scholarly publications of texts registered in Abbriviated Reference. Used to attribute publication metadata in Ancient Word Full Reference and to support bibliography linking on lemma pages.
         </td>
     </tr>
     <tr>
@@ -43,7 +43,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Special Cases 3rd Level Editions
         </td>
         <td>
-            Lists additional publications of some texts in References - Abbreviated.
+            Lists additional edition layers for specific texts when standard early/modern bibliographies are insufficient.
         </td>
     </tr>
     <tr>
@@ -51,7 +51,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Fragment Edition Bibliographies
         </td>
         <td>
-            Lists publications of the treatise *Fragments*.
+            Lists publications of the treatise Fragments.
         </td>
     </tr>
 </table>
@@ -64,7 +64,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Ancient Word Lookup Table
         </td>
         <td>
-            Lists all Ancient words in ATLOMY's corpus.
+            Lists all ancient words attested in the ATLOMY corpus.
         </td>
     </tr>
     <tr>
@@ -72,7 +72,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Ancient Word Full Reference
         </td>
         <td>
-            Gathers bibliographical and attributive information about Ancient words and automatically generates bibliographical references for them. This table is the source of all automated references to Ancient words in the Lemma Pool, and it is the main source of content for the Lemma Pages. It is the table to which annotations from INCEpTION are imported and transformed into automated references.
+            Aggregates bibliographic and lexical attribution for ancient words and automatically generates references. This table is the source of automated references in the Lemma Pool and the primary structured input for lemma-page content. INCEpTION annotations are imported and transformed here.
         </td>
     </tr>
 </table>
@@ -85,7 +85,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Modern Terms (deprecated)
         </td>
         <td>
-            Defined possible related terms for lemmas.
+            Previously defined possible related terms for lemmas.
         </td>
     </tr>
     <tr>
@@ -93,7 +93,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Synonyms (deprecated)
         </td>
         <td>
-            Defined possible synonyms for lemmas. It was replaced by the “Synonyms” column in the Lemma Pool.
+            Previously defined possible synonyms for lemmas. Replaced by the Synonyms field in the Lemma Pool workflow.
         </td>
     </tr>
     <tr>
@@ -101,7 +101,7 @@ Supporting Tables define fundamental entries that recure across the database, su
             Source Languages
         </td>
         <td>
-            Lists the languages of origin for the Ancient words in the corpus.
+            Lists source languages for ancient words in the corpus.
         </td>
     </tr>
     <tr>
@@ -109,7 +109,11 @@ Supporting Tables define fundamental entries that recure across the database, su
             Category Types
         </td>
         <td>
-            Defines categories for how ancient words are relevant to anatomy and medicine (such as Body Parts, Topography, Action Verbs, Tools, etc.)
+            Defines relevance categories for anatomy and medicine (for example, body parts, topography, action verbs, and tools).
         </td>
     </tr>
 </table>
+
+## Gaps and Missing Information
+
+The current documentation does not specify governance rules for deprecated tables, including whether they remain read-only, are archived, or are still queried by legacy processes.

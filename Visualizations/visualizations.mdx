@@ -4,17 +4,20 @@ title: 'Visualizations'
 
 ## Overview
 
-Visualizations is where ancient texts are reimagined as 3D models. When a researcher and a modeler start working on a new model,
-they open a new page for it in Visualizations, where they keep resources, track tasks, and document progress. Each model page contains subpages with:
+Visualizations is the ATLOMY workspace for planning and tracking 3D atlas models.
 
-* A link to a Google Drive folder containing the texts on which the model is based
-* A table of instructions, where the researcher instructs the modeler what body parts comprise the model and how they are positioned in it. All tables of instructions are views of - and so are synched to - the central table Modelling Instructions Sub-Items (see below).
-* Workflow documentation of each increment or modification done to the model
-* Feedback from the researcher regarding the latest increment or modification
+For each new model, the researcher and modeler create a project page that contains:
+
+1. A link to the Google Drive folder with source texts and assets.
+2. A Table of Instructions (a filtered view of Modelling Instructions Sub-Items).
+3. Increment history (what changed in each model version).
+4. Researcher feedback on each increment.
+
+Visualizations is the operational layer for model production: it combines source evidence, modeling instructions, review notes, and delivery status in one place.
 
 ## Structure
 
-### Backend tables
+### Core tables
 
 <table>
     <tr>
@@ -22,8 +25,8 @@ they open a new page for it in Visualizations, where they keep resources, track 
             <strong>Modelling Instructions Items</strong>
         </td>
         <td>
-            Lists major parts or layers of the body (for example, the mouth or superficial muscles)
-            and organ categories (for example, muscles discovered by Galen).
+            Lists major anatomical groups or layers (for example, mouth, superficial muscles),
+            including higher-level categories used in modeling.
         </td>
     </tr>
     <tr>
@@ -31,8 +34,8 @@ they open a new page for it in Visualizations, where they keep resources, track 
             <strong>Modelling Instructions Sub-Items</strong>
         </td>
         <td>
-            Lists components of a part or layer of the body
-            (for example, the tongue as part of the mouth or the biceps as part of the superficial muscles).
+            Lists atomic modeling units (for example, tongue under mouth, biceps under superficial muscles).
+            This is the source table for all project-specific Tables of Instructions.
         </td>
     </tr>
     <tr>
@@ -40,7 +43,7 @@ they open a new page for it in Visualizations, where they keep resources, track 
             <strong>Modelling Projects Overview</strong>
         </td>
         <td>
-            Lists every model-building project.
+            Lists all 3D modeling projects and their high-level metadata.
         </td>
     </tr>
 </table>
@@ -51,10 +54,10 @@ they open a new page for it in Visualizations, where they keep resources, track 
     <tr>
         <td>
             <strong>Ancient Word Full Reference</strong><br />
-            <em>(Referenced to in Modelling Instructions Items and Modelling Instructions Sub-Items)</em>
+            <em>(Referenced in Modelling Instructions Items and Modelling Instructions Sub-Items)</em>
         </td>
         <td>
-            Lists references for Ancient words including bibliographical and attributive information about them.
+            Stores bibliographic and attribution data for ancient-word references.
         </td>
     </tr>
     <tr>
@@ -63,25 +66,28 @@ they open a new page for it in Visualizations, where they keep resources, track 
             <em>(Deprecated in Visualizations)</em>
         </td>
         <td>
-            In a linked relation with Ancient Word Full Reference, it lists all Ancient words in ATLOMY’s corpus.
+            Legacy lookup list of ancient words. Kept for compatibility; not used in active Visualizations workflows.
         </td>
     </tr>
     <tr>
         <td>
             <strong>Lemma Pool</strong><br />
-            <em>(Referenced to in Modelling Instructions Sub-Items)</em>
+            <em>(Referenced in Modelling Instructions Sub-Items)</em>
         </td>
         <td>
-            Lists Lemmas. Each lemma is attributed a general translation,
-            transliteration, short and long descriptions, list of automated
-            references to the ancient texts (from Ancient Word full Reference), and more.
+            Stores lemma-level metadata: translation, transliteration, short and long descriptions,
+            and auto-linked source references.
         </td>
     </tr>
 </table>
 
 ## Tables of Instructions
 
-Modelling Instructions Sub-Items lists all body parts from all models in the atlas. For each new 3D project, a view of Modelling Instructions Sub-Items is created in the designated page of this project. These views, filtered only by project name of each sub-item,are called tables of instructions.
+Modelling Instructions Sub-Items contains all sub-items across all atlas projects.
+
+For each project, Visualizations creates a filtered view of this table by Project. This filtered view is called a Table of Instructions.
+
+Because it is a view, updates remain synchronized with the source table.
 
 ### Columns of a Table of Instructions
 
@@ -91,7 +97,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Sub-Item</strong>
         </td>
         <td>
-            The English name of the sub-item, representing it in the 3D atlas.
+            English name of the anatomical unit represented in the 3D atlas.
         </td>
     </tr>
     <tr>
@@ -99,7 +105,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Item</strong>
         </td>
         <td>
-            The group of sub-items that the sub-item belong to. Select from the list of the entries in Modeling Instruction - Items.
+            Parent group for the sub-item. Select from Modelling Instructions Items.
         </td>
     </tr>
     <tr>
@@ -107,7 +113,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Status</strong>
         </td>
         <td>
-            The status of the modeler’s work on this item - to indicate when they have began modelling a part, or when a draft or new version of the part is ready and should be reviewed by the researcher.
+            Current workflow state of the sub-item (for example: in progress, draft ready, ready for review, revised).
         </td>
     </tr>
     <tr>
@@ -115,7 +121,8 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Name of Item / Sub-Item</strong>
         </td>
         <td>
-            Filled automatically from the columns Lemma, Transliteration, and Translation. The text in this column is copied by the modeler into Blender as the name of an item.
+            Auto-generated display name from Lemma, Transliteration, and Translations.
+            Modelers copy this value into Blender when naming objects.
         </td>
     </tr>
     <tr>
@@ -123,7 +130,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>System Name</strong>
         </td>
         <td>
-            The system to which the sub-item belong to
+            Anatomical system for this sub-item.
         </td>
     </tr>
     <tr>
@@ -131,7 +138,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Anatomical Details</strong>
         </td>
         <td>
-            A brief description of the sub-item according to the researcher (free text)
+            Short researcher-authored anatomical description (free text).
         </td>
     </tr>
     <tr>
@@ -139,7 +146,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Instructions</strong>
         </td>
         <td>
-            The instructions of the researcher to the modeler for each sub-item as for what should they (free text)
+            Modeling instructions from researcher to modeler (free text).
         </td>
     </tr>
     <tr>
@@ -147,7 +154,8 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Source</strong>
         </td>
         <td>
-            The best indication for the basis and level of clarity of the researcher’s interpretation and design decisions for this part listed in Instructions. This information is aimed both for the modeler ATLOMY’s users.
+            Source basis for the interpretation and design decision in Instructions.
+            Intended for both modelers and ATLOMY end users.
         </td>
     </tr>
     <tr>
@@ -155,15 +163,16 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Certainty</strong>
         </td>
         <td>
-            The degree of certainty of the researcher regarding their Instructions and Source. This information is aimed both for the modeler ATLOMY's users.
+            Researcher confidence level for Instructions and Source.
+            Intended for both modelers and ATLOMY end users.
         </td>
     </tr>
     <tr>
         <td>
-            <strong>Open Isuues</strong>
+            <strong>Open Issues</strong>
         </td>
         <td>
-            Notes for further checks and confirmation
+            Outstanding questions that require verification or follow-up.
         </td>
     </tr>
     <tr>
@@ -171,7 +180,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Commentary</strong>
         </td>
         <td>
-            Any relevant points for discussion in the model page
+            Discussion notes relevant to the model page.
         </td>
     </tr>
     <tr>
@@ -179,7 +188,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Animal Basis</strong>
         </td>
         <td>
-            The animal from whose anatomy the model is derived to human anatomy
+            Source animal anatomy used to derive the human reconstruction, when applicable.
         </td>
     </tr>
     <tr>
@@ -187,7 +196,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Insights / Emphasis</strong>
         </td>
         <td>
-            Important makes from the researcher to the modeler
+            Key emphasis points from researcher to modeler.
         </td>
     </tr>
     <tr>
@@ -195,7 +204,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Project</strong>
         </td>
         <td>
-            The official name for the 3D model
+            Official project name for the 3D model.
         </td>
     </tr>
     <tr>
@@ -203,7 +212,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Owner</strong>
         </td>
         <td>
-            The researcher overseeing the Project (see above)
+            Researcher responsible for the project.
         </td>
     </tr>
     <tr>
@@ -211,7 +220,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Lemma</strong>
         </td>
         <td>
-            The lemma depicting this sub-item in the ancient text
+            Lemma representing this sub-item in the source text.
         </td>
     </tr>
     <tr>
@@ -219,7 +228,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Translations</strong>
         </td>
         <td>
-            The English translation of this sub-item’s Lemma (see above)
+            English translation of the lemma.
         </td>
     </tr>
     <tr>
@@ -227,7 +236,7 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Transliteration</strong>
         </td>
         <td>
-            The English transliteration of this sub-item’s Lemma (see above)
+            English transliteration of the lemma.
         </td>
     </tr>
     <tr>
@@ -235,7 +244,17 @@ Modelling Instructions Sub-Items lists all body parts from all models in the atl
             <strong>Formatted 3D Name</strong>
         </td>
         <td>
-            The name of the item to be used as the 3D object's name on the 3D Atlas. Intended for the modeler.
+            Final object name format used in the 3D Atlas. Intended for modelers.
         </td>
     </tr>
 </table>
+
+## Documentation gaps to complete
+
+The following should be documented explicitly for operational consistency:
+
+1. The allowed values for <strong>Status</strong> and what each value means.
+2. Naming rules for Blender objects (character set, separators, uniqueness).
+3. Required fields before a sub-item can move to review.
+4. Review and approval workflow (who approves, what is logged, where decisions are recorded).
+5. Change-log convention for increments/modifications (format and minimum content).

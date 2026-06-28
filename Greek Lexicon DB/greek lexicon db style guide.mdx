@@ -4,27 +4,28 @@ title: 'Greek Lexicon DB Style Guide'
 
 ## Reference Style
 
+Reference formatting for Abbreviated References, bibliographies, and automated references is generated automatically by each table. Do not manually reformat these fields.
 
-
-## Naming, Tranlating, and Transliterating Lemmas
+## Naming, Translating, and Transliterating Lemmas
 
 ### Ancient Greek Lemmas
 
-#### Naming conventions for Ancient Greek Lemmas changes according to the part of speech:
+#### Naming conventions
 
-* For **Verbs** write the first principle part the lemma's dictionary entry.\
-For example, `τείνω`, `διαιρέω`, `εἰσέρχομαι`
-* For **Nouns** write the full dictionary entry in this order, separated by commas: nominative singular form, hyphened genitive singular suffix or full genitive singular form, and the grammatical gender indicated as m., f., or n.\
-For example: `ὀστέον, -ου, n.`, `φλέψ, φλεβός, f.`
-* For **Adjectives** write the full dictionary entry as it appears in an ancient greek dictionary.\
-For example: `μακρός, -ά, -όν`, `μέγας, μεγάλη, μέγα`, `αἱματώδης, -ες`
-* For any other part of speech write the basic dictionary form.
+Ancient Greek lemmas are named according to part of speech:
 
-#### Translating convension: 
+* For **verbs**, use the first principal part as the dictionary headword. Example: `τείνω`, `διαιρέω`, `εἰσέρχομαι`.
+* For **nouns**, use the full dictionary entry in this order: nominative singular form, hyphenated genitive singular suffix or full genitive singular form, and grammatical gender abbreviated as `m.`, `f.`, or `n.` Example: `ὀστέον, -ου, n.`, `φλέψ, φλεβός, f.`
+* For **adjectives**, use the full dictionary entry as it appears in an Ancient Greek dictionary. Example: `μακρός, -ά, -όν`, `μέγας, μεγάλη, μέγα`, `αἱματώδης, -ες`.
+* For any other part of speech, use the standard dictionary form.
 
+#### Translation convention
 
+Provide a single-gloss English translation that reflects the lemma's core meaning in the context of ATLOMY's corpus.
 
-#### Transliteration convenstions:
+#### Transliteration conventions
+
+Use the following transliteration rules for Ancient Greek lemmas:
 
 `ᾰ - a` `ᾱ - ā`\
 `β - b`\
@@ -51,21 +52,30 @@ For example: `μακρός, -ά, -όν`, `μέγας, μεγάλη, μέγα`, `
 `ψ - ps`\
 `ω - ō`
 
+Accent and breathing rules:
+
+* Use simple accent notation only (for example, `é`).
+* Represent rough breathing by prefixing `h` to the transliterated form.
+* Smooth breathing is left unmarked.
+
 ### Latin Lemmas
 
-For **Nouns** write the nominative singular form only.
+For **nouns**, use the nominative singular form only.
 
 ### Classical Arabic Roots
 
-Name: write the three-letter Arabic root as a single word, without spaces. For example, `رجل`.
+#### Naming convention
 
-Translation: write the 
+Write the three-letter Arabic root as a single string, without spaces. Example: `رجل`.
 
-#### Transliteration convenstions:
+#### Translation convention
 
-The transliteration system chosen for the Atlomy corpus is the DIN 31635:
+Use a single core semantic gloss in English.
+
+#### Transliteration conventions
+
+Use DIN 31635 for Arabic transliteration:
 
 `ء - ʾ` `ب - b` `ت - t` `ث - ṯ` `ج - ǧ` `ح - ḥ` `خ - ḫ` `د - d` `ذ - ḏ` `ر - r` `ز - z` `س - s` `ش - š` `ص - ṣ` `ض - ḍ` `ط - ṭ` `ظ - ẓ` `ع - ʿ` `غ - ġ` `ف - f` `ق - q` `ك - k` `ل - l` `م - m` `ن - n` `ه - h` `و - w` `ي - y`
 
-DIN 31635 was chosen because each letter is independant - they do not require combinations of two or three letter to represent a single consonent. As the root, the transliteration is written three consenent together without space between them.\
-For Example, `رجل` is transliterated as `rǧl`.
+DIN 31635 is used because it preserves a one-to-one correspondence between Arabic letters and Latin characters, without requiring multi-letter combinations for a single consonant. For roots, write the transliteration as three consonants without spaces. Example: `رجل` becomes `rǧl`.

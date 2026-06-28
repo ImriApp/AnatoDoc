@@ -4,130 +4,117 @@ title: Authentication and Authorization
 
 ## Groups
 
-This section allows grouping permissions needed for performing a series of actions on the dashboard. These groups can then be assigned to users, saving the need of granting them each permission one-by-one.
+Groups let you bundle permissions and assign them to users in one step.
 
-Users can be granted permissions to *add*, *change*, *delete*, and *view* all sorts of items in the dashboard.
+Permissions control whether a user can add, change, delete, or view data in specific sections.
 
-Currently, there are three Groups:
+Current groups:
 
-<table>
-    <th>
-        Group
-    </th>
-    <th>
-        Task to be Done
-    </th>
-    <th>
-        Permissions
-    </th>
-    <tr>
-        <td>
-            Content Editors
-        </td>
-        <td>
-            Manage Lemma Pages and Other Pages
-        </td>
-            <td>
-                <code>Atlomyapp|lemma|can add lemma</code><br />
-                <code>Atlomyapp|lemma|can change lemma</code><br />
-                <code>Atlomyapp|lemma|can delete lemma</code><br />
-                <code>Atlomyapp|lemma|can view lemma</code><br />
-                <code>Atlomyapp|model|can view model</code><br />
-                <code>Atlomyapp|page|can add page</code><br />
-                <code>Atlomyapp|page|can change page</code><br />
-                <code>Atlomyapp|page|can delete page</code><br />
-                <code>Atlomyapp|page|can view page</code>
-            </td>
-        </tr>
-    <tr>
-        <td>
-            Model Description Editors
-        </td>
-        <td>
-            Manage model descriptions
-        </td>
-        <td>
-            <code>Atlomyapp|lemma|can add lemma</code><br />
-            <code>Atlomyapp|lemma|can change lemma</code><br />
-            <code>Atlomyapp|lemma|can delete lemma</code><br />
-            <code>Atlomyapp|lemma|can view lemma</code><br />
-            <code>Atlomyapp|model mapping|can add model mapping</code><br />
-            <code>Atlomyapp|model mapping|can change model mapping</code><br />
-            <code>Atlomyapp|model mapping|can delete model mapping</code><br />
-            <code>Atlomyapp|model mapping|can view model mapping</code><br />
-            <code>Atlomyapp|reference|can add reference</code><br />
-            <code>Atlomyapp|reference|can change reference</code><br />
-            <code>Atlomyapp|reference|can delete reference</code><br />
-            <code>Atlomyapp|reference|can view reference</code><br />
-            <code>modelauthor|can add modelauthor</code><br />
-            <code>modelauthor|can change modelauthor</code><br />
-            <code>modelauthor|can delete modelauthor</code><br />
-            <code>modelauthor|can view modelauthor</code><br />
-            <code>modeldescription|can add modeldescription</code><br />
-            <code>modeldescription|can change modeldescription</code><br />
-            <code>modeldescription|can delete modeldescription</code><br />
-            <code>modeldescription|can view modeldescription</code><br />
-            <code>submodels|can add sub models</code><br />
-            <code>submodels|can change sub models</code><br />
-            <code>submodels|can delete sub models</code><br />
-            <code>submodels|can view sub models</code><br />
-            <code>Content Types|content type|can add content type</code><br />
-            <code>Content Types|content type|can change content type</code><br />
-            <code>Content Types|content type|can delete content type</code><br />
-            <code>Content Types|content type|can view content type</code><br />
-            <code>attachment|can add attachment</code><br />
-            <code>attachment|can change attachment</code><br />
-            <code>attachment|can delete attachment</code><br />
-            <code>attachment|can view attachment</code><br />
-            <code>Sessions|session|can add session</code><br />
-            <code>Sessions|session|can change session</code><br />
-            <code>Sessions|session|can delete session</code><br />
-            <code>Sessions|session|can view session</code>        
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Model Lemma Editing
-        </td>
-        <td>
-            Manage Model Lemmas
-        </td>
-        <td>
-            <code>Atlomyapp|model lemma|can add model lemma</code><br />
-            <code>Atlomyapp|model lemma|can change model lemma</code><br />
-            <code>Atlomyapp|model lemma|can delete model lemma</code><br />
-            <code>Atlomyapp|model lemma|can view model lemma</code>
-        </td>
-    </tr>
-</table>
+### Content Editors
 
-### To create a group of permissions:
-1. Enter **Admin Dashboard > Authentication & Authorization > Groups**.
+Task: Manage Lemma Pages and Other Pages.
+
+Permissions:
+- <code>Atlomyapp|lemma|can add lemma</code>
+- <code>Atlomyapp|lemma|can change lemma</code>
+- <code>Atlomyapp|lemma|can delete lemma</code>
+- <code>Atlomyapp|lemma|can view lemma</code>
+- <code>Atlomyapp|model|can view model</code>
+- <code>Atlomyapp|page|can add page</code>
+- <code>Atlomyapp|page|can change page</code>
+- <code>Atlomyapp|page|can delete page</code>
+- <code>Atlomyapp|page|can view page</code>
+
+### Model Description Editors
+
+Task: Manage model descriptions.
+
+Permissions:
+- <code>Atlomyapp|lemma|can add lemma</code>
+- <code>Atlomyapp|lemma|can change lemma</code>
+- <code>Atlomyapp|lemma|can delete lemma</code>
+- <code>Atlomyapp|lemma|can view lemma</code>
+- <code>Atlomyapp|model mapping|can add model mapping</code>
+- <code>Atlomyapp|model mapping|can change model mapping</code>
+- <code>Atlomyapp|model mapping|can delete model mapping</code>
+- <code>Atlomyapp|model mapping|can view model mapping</code>
+- <code>Atlomyapp|reference|can add reference</code>
+- <code>Atlomyapp|reference|can change reference</code>
+- <code>Atlomyapp|reference|can delete reference</code>
+- <code>Atlomyapp|reference|can view reference</code>
+- <code>modelauthor|can add modelauthor</code>
+- <code>modelauthor|can change modelauthor</code>
+- <code>modelauthor|can delete modelauthor</code>
+- <code>modelauthor|can view modelauthor</code>
+- <code>modeldescription|can add modeldescription</code>
+- <code>modeldescription|can change modeldescription</code>
+- <code>modeldescription|can delete modeldescription</code>
+- <code>modeldescription|can view modeldescription</code>
+- <code>submodels|can add sub models</code>
+- <code>submodels|can change sub models</code>
+- <code>submodels|can delete sub models</code>
+- <code>submodels|can view sub models</code>
+- <code>Content Types|content type|can add content type</code>
+- <code>Content Types|content type|can change content type</code>
+- <code>Content Types|content type|can delete content type</code>
+- <code>Content Types|content type|can view content type</code>
+- <code>attachment|can add attachment</code>
+- <code>attachment|can change attachment</code>
+- <code>attachment|can delete attachment</code>
+- <code>attachment|can view attachment</code>
+- <code>Sessions|session|can add session</code>
+- <code>Sessions|session|can change session</code>
+- <code>Sessions|session|can delete session</code>
+- <code>Sessions|session|can view session</code>
+
+### Model Lemma Editing
+
+Task: Manage Model Lemmas.
+
+Permissions:
+- <code>Atlomyapp|model lemma|can add model lemma</code>
+- <code>Atlomyapp|model lemma|can change model lemma</code>
+- <code>Atlomyapp|model lemma|can delete model lemma</code>
+- <code>Atlomyapp|model lemma|can view model lemma</code>
+
+### Create a group
+
+1. Go to **Admin Dashboard > Authentication & Authorization > Groups**.
 2. Click **Add Group**.
-3. Enter the group's **Name**. 
-4. Define the set of permissions by transferring them from **Available permissions** to **Chosen permissions**.
+3. Enter the group **Name**.
+4. Move required permissions from **Available permissions** to **Chosen permissions**.
+5. Click **Save**.
 
 ## Users
 
-This section allows creating user accounts and editing permissions for users.
+Use this section to create user accounts and control access.
 
-### To create a user account:
-1. Enter **Admin Dashboard > Authentication & Authorization > Users**.
-2. Click **Add User** on the upper right corner. 
-3. Enter the user's username and
-4. Choose **Password based authentication**.
-5. Enter a password for the user.
-6. re-enter the password for confirmation.
-7. Click **Save**.
+### Create a user account
 
-### To add more personal information to the user and edit their permissions:
+1. Go to **Admin Dashboard > Authentication & Authorization > Users**.
+2. Click **Add User**.
+3. Enter the username.
+4. Select **Password based authentication**.
+5. Enter a password, then confirm it.
+6. Click **Save**.
 
-1. Enter **Admin Dashboard > Authentication & Authorization > Users > [user's username]**.
-2. Add the user's **First and Last name**.
-3. Add the user's **Email Address**.
-4. **Activate/Deactivate** the user's account. This is preferable to deleting the user account.
-5. Validate/invalidate the user's **Staff Status**. This keeps the account active but prevents the user from accessing the dashboard.
-6. Grant/deny the user **Superuser Status**. This gives the user access to all permissions.
-7. Assign the user to one or more **Groups**.
-8. Assign the user individual **Permissions**.
+### Update user details and permissions
+
+1. Go to **Admin Dashboard > Authentication & Authorization > Users > [user's username]**.
+2. Add **First name** and **Last name**.
+3. Add the **Email address**.
+4. Set **Active** on or off. Deactivation is preferred over deleting the account.
+5. Set **Staff status** on or off. This keeps the account active but controls dashboard access.
+6. Set **Superuser status** on or off. Superusers receive all permissions.
+7. Assign one or more **Groups**.
+8. Assign individual **Permissions** if needed.
 9. Click **Save**.
+
+## Documentation Gaps to Complete
+
+- Confirm whether these three groups are exhaustive or only current defaults, and who owns updates.
+- Add a policy for when to use **Groups** versus direct **Permissions**.
+- Document password rules (minimum length, complexity, expiration, reset flow).
+- Clarify whether MFA/2FA is supported or required for any user category.
+- Add an onboarding and offboarding checklist (create user, assign groups, deactivate account, audit access).
+- Add guidance for emergency access and superuser assignment approvals.

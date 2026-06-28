@@ -2,17 +2,25 @@
 title: 'Greek Lexicon DB'
 ---
 
-## Function
+## Purpose
 
-Greek Lexicon DB stores all lemma information in a database-like structure of tables (relations), and serves as a sandbox for lemma-centric studies.
+Greek Lexicon DB stores lemma data in a relational, table-based structure and serves as the working environment for lemma-centered analysis.
 
 ## Overview
 
-[Supporting Tables](supporting%20tables.mdx) define fundamental and recurring entries. The central supporting tables define Abbreviated References, Early and Modern Edition Bibliographies, Source Languages, Category Types, and Ancient Words. These entities are the building blocks of the higher-level tables, Ancient Words full Reference and the Lemma Pool:
+[Supporting Tables](supporting%20tables.mdx) define recurring entities used throughout the database, including abbreviated references, edition bibliographies, source languages, category types, and ancient words. These tables feed two core outputs:
 
-[Ancient Word Full Reference](./supporting%20tables.mdx#ancient-word-tables) creates automated references for Ancient words according to annotations made with and imported from INCEpTION. These references include bibliographical information (treatise, publication, textual context) and attributive information (source language, category type, and lemma).
+1. [Ancient Word Full Reference](./supporting%20tables.mdx#ancient-word-tables): Builds automated references for ancient words from INCEpTION annotations, including bibliographic metadata (treatise, edition, location) and lexical attribution (source language, category type, lemma).
+2. [The Lemma Pool](lemma%20pool.mdx): Consolidates lemma-level data, including transliteration, single-gloss translation, descriptions, and linked automated references.
 
-[The Lemma Pool](lemma%20pool.mdx) defines Lemmas. Each lemma is attributed a latin transliteration, general english translation, short and long descriptions, list of automated references to the ancient texts (from Ancient Word full Reference), and more. All data culminates in the lemma pool, and it is the single source of content for ATLOMY.com lemma pages.
+The Lemma Pool is the single source used to populate lemma pages in the ATLOMY admin workflow.
+
+## Data Flow Summary
+
+1. Register reusable entities in supporting tables.
+2. Import and transform INCEpTION annotations into Ancient Word Full Reference.
+3. Aggregate and normalize lemma-level content in the Lemma Pool.
+4. Push configured outputs to the Admin Dashboard for lemma-page creation or update.
 
 ## DB Map
 
@@ -115,3 +123,7 @@ erDiagram
 	Lemma_Pool||--o{Ancient_Word_Full_Reference:"Defines Lemmas for, and reflects Automated References from"
 	Source_Languages||--o{Lemma_Pool:"Defines Languages for"
 ```
+
+## Gaps and Missing Information
+
+The current DB map does not include the supporting tables "Special Cases 3rd Level Editions" and "Fragment Edition Bibliographies," although they are documented elsewhere. If they are active in production, their relationships should be added to keep the map complete.
