@@ -17,6 +17,91 @@ To update the link:
 3. Click **Cross-doc Table**.
 4. Click **Refresh**.
 
+## Overall Stucture
+
+```mermaid
+erDiagram
+	direction TB
+	"Lemma Pool" {
+		TEXT lemma PK ""  
+		TEXT latin_transliteration  ""  
+		TEXT english_translation  ""  
+		TEXT alternative_spelling  ""  
+		CHOICE source_language FK ""  
+		TEXT short_description  ""  
+		TEXT long_description  ""  
+		TEXT related_terms  ""  
+	}
+
+    	"Files" {
+		LINK file PK ""  
+		TEXT id2 ""  
+		IMAGE thumbnail  ""  
+		IMAGE full_image  ""  
+		SELECT lemmata FK ""
+	}
+
+    	"3D Models" {
+		FORMULA name PK ""
+		CHOICE lemmata FK ""
+		MODEL model  ""
+		LINK url ""
+	}
+
+		"Dissection Peritoneum 26.3.24" {
+		NUMBER step ""  
+		TEXT substep PK ""  
+		TEXT instruction  ""  
+		TEXT translation  ""  
+		TEXT greek_text ""
+		IMAGE images FK ""
+		VIDEO step_video_clip FK ""
+		VIDEO full_dissection_step_timecode ""
+		MODEL three-dimentional_view FK ""
+		TEXT observations ""
+		TEXT publication_instructions ""
+	}
+
+		"Dissection Hindlimb 27.3.24" {
+		NUMBER step ""  
+		TEXT substep PK ""  
+		TEXT instruction  ""  
+		TEXT translation  ""  
+		TEXT greek_text ""
+		IMAGE images FK ""
+		VIDEO step_video_clip FK ""
+		VIDEO full_dissection_step_timecode ""
+		MODEL three-dimentional_view FK ""
+		TEXT observations ""
+		TEXT publication_instructions ""
+	}
+
+		"Dissection Brain 28.3.25" {
+		NUMBER step ""  
+		TEXT substep PK ""  
+		TEXT instruction  ""  
+		TEXT translation  ""  
+		TEXT greek_text ""
+		IMAGE images FK ""
+		VIDEO step_video_clip FK ""
+		VIDEO full_dissection_step_timecode ""
+		MODEL three-dimentional_view FK ""
+		TEXT observations ""
+		TEXT publication_instructions ""
+	}
+
+	"Lemma Pool"||--o{"Files":"Provides Abbriviations for"
+	"Lemma Pool"||--o{"3D Models":"Provides Abbriviations for"
+	
+	"Files"||--o{"Dissection Peritoneum 26.3.24":"Provides Abbriviations for"
+	"Files"||--o{"Dissection Hindlimb 27.3.24":"Provides Abbriviations for"
+	"Files"||--o{"Dissection Brain 28.3.25":"Provides Abbriviations for"
+
+	"3D Models"||--o{"Dissection Peritoneum 26.3.24":"Provides Abbriviations for"
+	"3D Models"||--o{"Dissection Hindlimb 27.3.24":"Provides Abbriviations for"
+	"3D Models"||--o{"Dissection Brain 28.3.25":"Provides Abbriviations for"
+```
+
 ## Backend Tables
 
 - **Lemma Pool**: Drawn from Greek Lexicon DB, it provides the lemma tags applied in both **Files** and **3D Models**.
