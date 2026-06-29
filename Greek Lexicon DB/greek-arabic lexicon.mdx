@@ -6,7 +6,7 @@ title: 'Greek-Arabic Lexicon'
 
 The Greek-Arabic Lexicon records generalized Greek-Arabic lexical correspondences listed in the modern editions of Galen's Anatomical Procedures (Garofalo 1986, 2000; Simon 1906), including their early-reference framing.
 
-These correspondences are presented as a filtered view of Ancient Word Full Reference, not as an independent source table.
+These correspondences are presented as a filtered view of Ancient Word Full Reference, where the only filter is `thisRow.[Modern Edition]=[Galen, Anatomical Procedures]`, not as an independent source table.
 
 ## Scope
 
@@ -24,17 +24,17 @@ This table is a view of Ancient Word Full Reference with the following columns:
 
 | Column | Description |
 | --- | --- |
-| Translation (AR) | Arabic lexical rendering in this correspondence view. |
-| Translation (GK) | Greek lexical form used in the correspondence view. |
-| Cross Reference | Generated or normalized textual reference carried from the source row. |
-| Page | Page value from the source bibliographic location. |
-| Line Number | Line value from the source bibliographic location. |
-| Early Category Type | Early-edition category attribution associated with the row. |
-| Translation (EN) | English translation value carried from the source row. |
-| Translation German | German translation value carried from the source row. |
-| Modern Edition | Modern edition attribution for the row. |
-| Created by | Audit field from the source row. |
-| Modified on | Audit timestamp from the source row. |
+| Translation (AR) | Arabic lexical value for the entry. |
+| Translation (GK) | Greek lexical value aligned to the Arabic entry. |
+| Cross Reference | Reference locator string from the source row; may be empty or contain one or more locators. |
+| Page | Page locator from the source edition metadata. |
+| Line Number | Line locator from the source edition metadata. |
+| Early Category Type | Controlled lexical category label from the source row. |
+| Translation (EN) | English translation value from the source row. |
+| Translation German | German gloss or explanatory translation corresponding to the same row. |
+| Modern Edition | Modern-edition source label for the entry. |
+| Created by | Creator name recorded in the source table (user/auditing metadata). |
+| Modified on | Last-modified timestamp recorded in the source table. |
 
 ## View Semantics
 
@@ -43,4 +43,41 @@ Because this table is a view, it inherits all row-level provenance from Ancient 
 * No standalone primary key is required in this view.
 * No direct foreign key to Lemma Pool is required in this view.
 * Updates are made in Ancient Word Full Reference, then reflected here through view synchronization.
-* Coverage is limited to rows that satisfy the Greek-Arabic lexicon view filter in the source table (that is, selected terms rather than guaranteed full-edition exhaustiveness).
+* Coverage is limited to rows that satisfy the Greek-Arabic lexicon view filter in the source table.
+* The same Arabic entry can appear in multiple rows when aligned to different Greek forms, references, or locations.
+
+## Second Person Arabic Tables
+
+These tables document second-person Arabic forms extracted from the two modern editions used in this workflow.
+Each sub-table follows the source-specific column naming while preserving the same annotation logic.
+
+### Second Person Arabic - Garofalo
+
+| Column | Description |
+| --- | --- |
+| Word | Arabic token or expression recorded in the source line. |
+| Book | Source edition label used for this sub-table. |
+| Page no | Page locator from the source edition. |
+| Line no | Line locator from the source edition. |
+| Type | Grammatical class assigned to the entry. |
+| Tense (verb) | Verb tense when the entry type is a verb; otherwise empty. |
+| Gender & number | Person/gender/number value assigned to the entry. |
+| Identifier highlighted | Morphological segment used to identify the second-person marking. |
+| Explanation | Annotation note describing why the entry is tagged as second person. |
+| Translation | English rendering of the entry. |
+
+
+### Second Person Arabic - Simon
+
+| Column | Description |
+| --- | --- |
+| Word | Arabic token or expression recorded in the source line. |
+| Book | Source edition label used for this sub-table. |
+| Page no | Page locator from the source edition. |
+| Line no | Line locator from the source edition. |
+| Type | Grammatical class assigned to the entry. |
+| Tense (verb) | Verb tense when the entry type is a verb; otherwise empty. |
+| Gender& number | Person/gender/number value assigned to the entry. |
+| Identifier and highlighted | Morphological segment used to identify the second-person marking. |
+| Explanation | Annotation note describing why the entry is tagged as second person. |
+| Translation | English rendering of the entry. |
