@@ -4,7 +4,54 @@ title: 'Greek Lexicon DB Style Guide'
 
 ## Reference Style
 
-Reference formatting for Abbreviated References, bibliographies, and automated references is generated automatically by each table. Do not manually reformat these fields.
+When entering source data, use the standard scholarly citation pattern for the edition in question so the generated reference renders correctly.
+
+### General pattern
+
+Use this order unless a source has a well-established exception:
+
+`Author abbreviation, Work abbreviation locator(s) [parallel edition citation] [edition label]`
+
+Keep the citation elements in the order used by the source edition. Do not normalize different scholarly numbering systems into one another.
+
+### Common citation forms
+
+* **Standard author + work + locator + parallel edition citation**
+
+	Example: `Hipp., Nat. Hom. 1 (164,2 Jouanna = VI.32 L.) (Littre)`
+
+	Use this form when the main citation is followed by a parenthetical parallel citation to a modern edition and, optionally, a second edition label in parentheses.
+
+* **Edition with a different chapter numbering system**
+
+	Example: `Hipp. Morb. sacr. 16.4 = 19 Jones (29,17 Jouanna = VI.390 L.)`
+
+	Use the `=` sign to show the equivalent locator in the edition being cited when that edition uses a different numbering system. Mark this as an exception only when the edition is not aligned with the standard chapter numbering. This is the only treatise in the current system that requires this complication.
+
+* **Parallel citation with an edition siglum**
+
+	Example: `Gal., PHP I.7.1 (82,12 De Lacy = V.189 K.)`
+
+	If the edition siglum is not obvious, define it on first use. For example, `K.` means `Kühn`.
+
+* **Simple edition citation**
+
+	Example: `Gal., AA VII.4, 254,2 Simon`
+
+	Use this form when the work is cited directly from a single edition without a second parallel reference.
+
+* **Canonical ancient locator**
+
+	Example: `Arist. HA III.5, 515a27`
+
+	Preserve canonical locator systems such as Bekker numbers exactly as they appear in the source tradition.
+
+### Practical rules
+
+* Keep author abbreviations and work abbreviations exactly as established in the source tradition.
+* Use commas, periods, and parentheses as required by the citation tradition of the edition.
+* Use `=` only for equivalent locators or edition equivalences, not as a general separator.
+* Add edition labels or sigla only when they are necessary to disambiguate the source.
 
 ## Naming, Translating, and Transliterating Lemmas
 
@@ -74,8 +121,8 @@ Use a single core semantic gloss in English.
 
 #### Transliteration conventions
 
-Use DIN 31635 for Arabic transliteration:
+Use ISO 233 for Arabic transliteration:
 
-`ء - ʾ` `ب - b` `ت - t` `ث - ṯ` `ج - ǧ` `ح - ḥ` `خ - ḫ` `د - d` `ذ - ḏ` `ر - r` `ز - z` `س - s` `ش - š` `ص - ṣ` `ض - ḍ` `ط - ṭ` `ظ - ẓ` `ع - ʿ` `غ - ġ` `ف - f` `ق - q` `ك - k` `ل - l` `م - m` `ن - n` `ه - h` `و - w` `ي - y`
+`ء - ’` `أ - ’` `ب - b` `ت - t` `ث - ṯ` `ج - ǧ` `ح - ḥ` `خ - ḫ` `د - d` `ذ - ḏ` `ر - r` `ز - z` `س - s` `ش - š` `ص - ṣ` `ض - ḍ` `ط - ṭ` `ظ - ẓ` `ع - ʿ` `غ - ġ` `ف - f` `ق - q` `ك - k` `ل - l` `م - m` `ن - n` `ه - h` `و - w` `ي - y`
 
-DIN 31635 is used because it preserves a one-to-one correspondence between Arabic letters and Latin characters, without requiring multi-letter combinations for a single consonant. For roots, write the transliteration as three consonants without spaces. Example: `رجل` becomes `rǧl`.
+ISO 233 is used because it preserves a one-to-one correspondence between Arabic letters and Latin characters without requiring digraphs for a single consonant. For roots, write the transliteration as three consonants without spaces. Example: `رجل` becomes `rǧl`.
