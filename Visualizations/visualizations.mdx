@@ -89,6 +89,15 @@ For each project, Visualizations creates a filtered view of this table by Projec
 
 Because it is a view, updates remain synchronized with the source table.
 
+### Workflow and ownership
+
+1. The researcher fills in the Table of Instructions (all relevant fields except <strong>Status</strong>).
+2. The modeler creates each item according to those instructions and updates <strong>Status</strong> during progress.
+3. When the modeler sets <strong>Status = Review</strong>, the researcher reviews the modeled item.
+4. The researcher updates instructions as needed, and the modeler revises accordingly.
+5. Steps 3-4 repeat until the researcher is satisfied.
+6. The researcher sets <strong>Status = Done</strong> to approve the sub-item.
+
 ### Columns of a Table of Instructions
 
 <table>
@@ -113,7 +122,8 @@ Because it is a view, updates remain synchronized with the source table.
             <strong>Status</strong>
         </td>
         <td>
-            Current workflow state of the sub-item (for example: in progress, draft ready, ready for review, revised).
+            Current workflow state of the sub-item, updated by the modeler to keep the researcher informed.
+            Allowed values: Not Started, In Progress, Review, Done, REMOVE!.
         </td>
     </tr>
     <tr>
@@ -122,7 +132,7 @@ Because it is a view, updates remain synchronized with the source table.
         </td>
         <td>
             Auto-generated display name from Lemma, Transliteration, and Translations.
-            Modelers copy this value into Blender when naming objects.
+            Modelers copy this value into Blender when naming objects; this is the naming source used in production.
         </td>
     </tr>
     <tr>
@@ -248,13 +258,3 @@ Because it is a view, updates remain synchronized with the source table.
         </td>
     </tr>
 </table>
-
-## Documentation gaps to complete
-
-The following should be documented explicitly for operational consistency:
-
-1. The allowed values for <strong>Status</strong> and what each value means.
-2. Naming rules for Blender objects (character set, separators, uniqueness).
-3. Required fields before a sub-item can move to review.
-4. Review and approval workflow (who approves, what is logged, where decisions are recorded).
-5. Change-log convention for increments/modifications (format and minimum content).

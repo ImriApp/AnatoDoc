@@ -8,9 +8,28 @@ Dissections documents reenactments of surgical procedures described in Galen's t
 
 Dissections is linked to **Ancient Dissection - Re-enacted**, a separate Coda file that aggregates this data into per-procedure dashboards. That file is embedded in the [Re-enactment Page](https://www.atlomy.com/re-enactment) on ATLOMY.com.
 
+This link must be updated manually after a reenactment page is modified.
+
+To update the link:
+
+1. Open [Ancient Dissection - Re-enacted](https://coda.io/d/_dllGY_uUlp2/Ancient-Dissection-Re-enacted_su0uwSUz#_lu9r6), then go to the dissection pages table you want to update.
+2. In the table's top-right corner, click **Options**, then **See all options**.
+3. Click **Cross-doc Table**.
+4. Click **Refresh**.
+
+## Backend Tables
+
+- **Lemma Pool**: Drawn from Greek Lexicon DB, it provides the lemma tags applied in both **Files** and **3D Models**.
+- **Files**: Connected to the *Dissections* Google Drive folder that stores reenactment images and videos. This table imports those media files as records so they can be tagged by dissection step and linked to step-level data.
+- **3D Models**: Connected to Atlomy's Sketchfab account that stores 3D organ renders from reenactments. This table imports those models as records so they can be tagged by dissection step and linked to step-level data.
+
 ## Adding a New Reenactment
 
 After performing a reenactment, create a new page in Dissections. To get started, copy an existing table rather than building one from scratch — see the reference tables below. Populate the table by filling in one row per substep.
+
+Use the required page naming format: `Dissection-[Procedure]-[DD-MM-YY]`.
+
+All columns are filled by the physician who conducted the reenactment.
 
 ## Table Structure
 
@@ -18,15 +37,16 @@ Each reenactment table may vary slightly, but all tables share the following col
 
 | Column | Description |
 |---|---|
-| **Step** | Ordinal position of this step within the procedure. Unique per procedure; does not reset. |
-| **Substep** | Ordinal position of this substep within its parent step. Resets to 1 at each new parent step. |
-| **Instruction** | The action to perform at this substep, derived from analysis of the relevant passage in Galen's text. |
-| **Translation** | English translation of the Galenic passage on which this substep's instruction is based. |
-| **Greek Texts** | The original Greek passage on which this substep's instruction is based. |
+| **Step** | Numbered values (1, 2, 3...) indicate the anatomical part or area being dissected. Step numbering is unique per procedure and does not reset. |
+| **Substep** | Lettered values within each step (1a, 1b...) indicate particular dissection actions performed, or expected findings. |
+| **Instruction** | The instruction written and listed in the dissection manual, based on analysis of a particular sentence or passage in Galen's text. |
+| **Translation** | An English translation of the respective passage in Galen's text. |
+| **Greek Texts** | The Greek text of the respective passage, from the edition of Ivan Garofalo (2000). Enter the text directly in this column; do not add links. |
 | **Images** | Still images of this substep captured during the reenactment. |
-| **Step Video Clip** | Video clip of this substep, cut from the full step recording. |
-| **Full Dissection Step Timecode** | Video of the entire parent step as performed, encompassing all its substeps. |
-| **Observations** | Post-reenactment observations recorded by the physician, anatomist, or researcher. |
+| **Step Video Clip** | A close-up video of the particular step, when available. |
+| **Full Dissection Step Timecode** | A link to the particular step in the video of the entire dissection, providing additional context when needed and when available. |
+| **3D Scan** | A 3D scan of the particular part or area, when available. |
+| **Observations** | Relevant linguistic points explaining interpretation; clarifications of anatomical points Galen took for granted; findings that differ from Galen's descriptions; and actions that could not be achieved. |
 | **Publication Instructions** | Notes on what to include or highlight in any publication reviewing this reenactment. |
 
 ## Reference Tables
@@ -39,14 +59,4 @@ Use one of the following existing tables as a template when documenting a new re
 
 ## Documentation gaps to complete
 
-The points below are still unclear from the current documentation and should be confirmed by someone with direct knowledge of the workflow.
-
-- **Page naming convention** — Is there a required naming format for new reenactment pages, such as `Dissection-[Procedure]-[DD-MM-YY]`?
-- **Table variation** — Which columns are optional, procedure-specific, or legacy, and which are canonical across all tables?
-- **Step vs. substep granularity** — What rule determines when a new step starts versus when something remains a substep of the previous step?
-- **Full Dissection Step Timecode** — Does this field store a timestamp, a video file, or a link, and which source recording does it reference?
-- **Column ownership** — Which roles are responsible for filling each column, especially Observations and Publication Instructions?
-- **Greek Texts source** — Must the Greek text link to Greek Lexicon DB entries, or is free text acceptable?
 - **Media storage** — Where should images and video clips be stored, and are there file naming or format requirements?
-- **Review workflow** — Does a reenactment table require review or sign-off before it is considered final?
-- **Sync behavior** — Is the link to Ancient Dissection - Re-enacted automatic, or does it require manual updating after a new page is added?

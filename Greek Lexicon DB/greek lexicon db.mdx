@@ -27,7 +27,7 @@ The Lemma Pool is the single source used to populate lemma pages in the ATLOMY a
 ```mermaid
 erDiagram
     direction TB
-	Abbriviated_References {
+	"Abbriviated References" {
 		TEXT reference PK ""  
 		TEXT author  ""  
 		TEXT english_title  ""  
@@ -35,7 +35,7 @@ erDiagram
 		TEXT treatise_abbriviation  ""  
 	}
 
-	Early_Edition_Bibliographies {
+	"Early Edition Bibliographies" {
 		TEXT name PK ""  
 		TEXT author  ""  
 		TEXT treatise  ""  
@@ -50,7 +50,7 @@ erDiagram
 		TEXT editor_abbriviation  ""  
 	}
 
-	Modern_Edition_Bibliographies {
+	"Modern Edition Bibliographies" {
 		TEXT name PK ""  
 		TEXT author  ""  
 		TEXT treatise  ""  
@@ -65,15 +65,15 @@ erDiagram
 		TEXT editor_abbriviation  ""  
 	}
 
-	Source_Languages {
+	"Source Languages" {
 		TEXT language PK ""  
 	}
 
-	Category_Types {
+	"Category Types" {
 		TEXT category PK ""  
 	}
 
-	Ancient_Word_Full_Reference {
+	"Ancient Word Full Reference" {
 		FORMULA automated_modern_reference PK ""  
 		CHOICE modern_edition FK ""  
 		NUMBER modern_book  ""  
@@ -99,11 +99,11 @@ erDiagram
 		TEXT dependent_words  ""  
 	}
 
-	Ancient_Word_Lookup_Table {
+	"Ancient Word Lookup Table" {
 		TEXT word PK ""  
 	}
 
-	Lemma_Pool {
+	"Lemma Pool" {
 		TEXT lemma PK ""  
 		TEXT latin_transliteration  ""  
 		TEXT english_translation  ""  
@@ -114,12 +114,12 @@ erDiagram
 		TEXT related_terms  ""  
 	}
 
-	Abbriviated_References||--o{Early_Edition_Bibliographies:"Provides Abbriviations for"
-	Abbriviated_References||--o{Modern_Edition_Bibliographies:"Provides Abbriviations for"
-	Modern_Edition_Bibliographies||--o{Ancient_Word_Full_Reference:"Defines Modern Bibliographies for"
-	Early_Edition_Bibliographies||--o{Ancient_Word_Full_Reference:"Defines Early Bibliographies for"
-	Category_Types||--o{Ancient_Word_Full_Reference:"Defines Category Types for"
-	Ancient_Word_Lookup_Table||--o{Ancient_Word_Full_Reference:"Enlists Ancient Words for"
-	Lemma_Pool||--o{Ancient_Word_Full_Reference:"Defines Lemmas for, and reflects Automated References from"
-	Source_Languages||--o{Lemma_Pool:"Defines Languages for"
-```
+	"Abbriviated References"||--o{"Early Edition Bibliographies":"Provides Abbriviations for"
+	"Abbriviated References"||--o{"Modern Edition Bibliographies":"Provides Abbriviations for"
+	"Modern Edition Bibliographies"||--o{"Ancient Word Full Reference":"Defines Modern Bibliographies for"
+	"Early Edition Bibliographies"||--o{"Ancient Word Full Reference":"Defines Early Bibliographies for"
+	"Category Types"||--o{"Ancient Word Full Reference":"Defines Category Types for"
+	"Ancient Word Lookup Table"||--o{"Ancient Word Full Reference":"Enlists Ancient Words for"
+	"Lemma Pool"||--o{"Ancient Word Full Reference":"Defines Lemmas for, and reflects Automated References from"
+	"Source Languages"||--o{"Lemma Pool":"Defines Languages for"
+	```
