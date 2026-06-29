@@ -18,7 +18,7 @@ Do not use this table for:
 * Automated reference generation
 * Lemma-page publication content that is sourced from the Lemma Pool
 
-## Table Schema (View Columns)
+## Table Schema
 
 This table is a view of Ancient Word Full Reference with the following columns:
 
@@ -36,7 +36,7 @@ This table is a view of Ancient Word Full Reference with the following columns:
 | Created by | Creator name recorded in the source table (user/auditing metadata). |
 | Modified on | Last-modified timestamp recorded in the source table. |
 
-## View Semantics
+## Semantics
 
 Because this table is a view, it inherits all row-level provenance from Ancient Word Full Reference:
 
@@ -48,10 +48,12 @@ Because this table is a view, it inherits all row-level provenance from Ancient 
 
 ## Second Person Arabic Tables
 
-These tables document second-person Arabic forms extracted from the two modern editions used in this workflow.
-Each sub-table follows the source-specific column naming while preserving the same annotation logic.
+These tables document second-person Arabic forms extracted from the two modern editions used in this workflow. Both sub-tables use the same schema.
 
-### Second Person Arabic - Garofalo
+Sources:
+
+* Second Person Arabic - Garofalo
+* Second Person Arabic - Simon
 
 | Column | Description |
 | --- | --- |
@@ -63,21 +65,5 @@ Each sub-table follows the source-specific column naming while preserving the sa
 | Tense (verb) | Verb tense when the entry type is a verb; otherwise empty. |
 | Gender & number | Person/gender/number value assigned to the entry. |
 | Identifier highlighted | Morphological segment used to identify the second-person marking. |
-| Explanation | Annotation note describing why the entry is tagged as second person. |
-| Translation | English rendering of the entry. |
-
-
-### Second Person Arabic - Simon
-
-| Column | Description |
-| --- | --- |
-| Word | Arabic token or expression recorded in the source line. |
-| Book | Source edition label used for this sub-table. |
-| Page no | Page locator from the source edition. |
-| Line no | Line locator from the source edition. |
-| Type | Grammatical class assigned to the entry. |
-| Tense (verb) | Verb tense when the entry type is a verb; otherwise empty. |
-| Gender& number | Person/gender/number value assigned to the entry. |
-| Identifier and highlighted | Morphological segment used to identify the second-person marking. |
 | Explanation | Annotation note describing why the entry is tagged as second person. |
 | Translation | English rendering of the entry. |
