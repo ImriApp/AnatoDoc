@@ -6,7 +6,7 @@ title: 'Greek-Arabic Lexicon'
 
 The Greek-Arabic Lexicon records generalized Greek-Arabic lexical correspondences listed in the modern editions of Galen's Anatomical Procedures (Garofalo 1986, 2000; Simon 1906), including their early-reference framing.
 
-These correspondences are not context-specific translations from ATLOMY corpus passages. For that reason, they are maintained outside Ancient Word Full Reference and outside the Lemma Pool.
+These correspondences are presented as a filtered view of Ancient Word Full Reference, not as an independent source table.
 
 ## Scope
 
@@ -18,10 +18,29 @@ Do not use this table for:
 * Automated reference generation
 * Lemma-page publication content that is sourced from the Lemma Pool
 
-## Gaps and Missing Information
+## Table Schema (View Columns)
 
-The current documentation does not define:
+This table is a view of Ancient Word Full Reference with the following columns:
 
-* The exact column schema for this table
-* Whether entries should link to Lemma Pool lemmas through a controlled foreign key or remain standalone
-* Whether all cited editions are fully covered or only selected terms
+| Column | Description |
+| --- | --- |
+| Translation (AR) | Arabic lexical rendering in this correspondence view. |
+| Translation (GK) | Greek lexical form used in the correspondence view. |
+| Cross Reference | Generated or normalized textual reference carried from the source row. |
+| Page | Page value from the source bibliographic location. |
+| Line Number | Line value from the source bibliographic location. |
+| Early Category Type | Early-edition category attribution associated with the row. |
+| Translation (EN) | English translation value carried from the source row. |
+| Translation German | German translation value carried from the source row. |
+| Modern Edition | Modern edition attribution for the row. |
+| Created by | Audit field from the source row. |
+| Modified on | Audit timestamp from the source row. |
+
+## View Semantics
+
+Because this table is a view, it inherits all row-level provenance from Ancient Word Full Reference:
+
+* No standalone primary key is required in this view.
+* No direct foreign key to Lemma Pool is required in this view.
+* Updates are made in Ancient Word Full Reference, then reflected here through view synchronization.
+* Coverage is limited to rows that satisfy the Greek-Arabic lexicon view filter in the source table (that is, selected terms rather than guaranteed full-edition exhaustiveness).
