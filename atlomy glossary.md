@@ -1,6 +1,6 @@
 ---
 title: 'ATLOMY Glossary'
-description: 'Common term from throughout ATLOMYs documentation for creating a common language'
+description: 'Common terms drawn from ATLOMY documentation to establish shared terminology'
 ---
 
 ## A
