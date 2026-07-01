@@ -22,6 +22,8 @@ The dashboard now connects directly to Coda through an API, so manual CSV export
 
 This script imports lemmas created since the creation date and lemmas updated since the update date. Use recent dates to reduce run time.
 
+Use the date format shown above. Locale does not affect parsing.
+
 4. Under **Use Coda**, make sure **yes** is selected.
 5. Under **Status**, change **stopped** to **running**. It will return to **stopped** automatically when the run finishes.
 6. Click **Save**.
@@ -36,6 +38,14 @@ Clicking **Save** runs the add_data script, which does the following:
 - Lemmas marked for deletion in the Lemma Pool are deactivated in the dashboard and removed from search results and Lemmas API responses.
 
 Atlomy.com is usually fully updated within 10 to 15 minutes.
+
+### Run cadence and ownership
+
+Run a configuration whenever there is enough new data in the database to publish to the website, or whenever an urgent database update must be reflected on the website.
+
+The timing is based on researcher judgment.
+
+The technical admin is responsible for running configurations and checking job results, based on researcher requests.
 
 ## Feedbacks
 
@@ -53,15 +63,25 @@ Warnings occur when lemma metadata is incomplete, for example missing a short de
 
 Failures occur when a lemma is missing a Name, Translation, or Transliteration. For metadata standards, see the [Coda Guide](../Greek%20Lexicon%20DB/lemma%20pool.mdx).
 
+For field definitions and formatting guidance, see [Lexicon DB (The Lemma Pool)](../Greek%20Lexicon%20DB/lemma%20pool.mdx).
+
+Warnings and failures are common and expected during ongoing content completion. They are usually non-urgent and can be resolved over time as missing data is added.
+
 ## Lemmas
 
 This section contains Lemma Pages imported from the Lemma Pool.
 
 Use it only to add typography to short and long descriptions. Other content edits should be made in the Lemma Pool and imported through a configuration.
 
+Configuration runs overwrite lemma content changes in the dashboard Lemmas section.
+
 Do not delete Lemma Pages directly in the dashboard. Deleting breaks references, including URLs, Model Lemmas, and search results.
 
 To remove a lemma from public outputs, mark it for deletion in the Lemma Pool and run a configuration. The page will be deactivated and excluded from search and Lemmas API responses.
+
+To reactivate a previously deactivated lemma page, unmark its row for deletion in the Lemma Pool and run a new configuration. The lemma page will be retrieved again, usually within 10 to 15 minutes.
+
+Do not delete lemma rows from the Lemma Pool. Use deletion marking instead, so entries can be restored when needed.
 
 ## Model Lemmas
 
@@ -123,6 +143,8 @@ This section manages Atlomy.com pages that are not Lemma Pages or Model Pages.
 
 This section was used to assign references to **Model Mappings**. It is deprecated.
 
+Deprecated sections are still editable for legacy maintenance.
+
 ### Add a reference
 
 1. Go to **Admin Dashboard > Atlomy App > References**.
@@ -130,14 +152,3 @@ This section was used to assign references to **Model Mappings**. It is deprecat
 3. Select the **Model Mapping** to assign the reference to.
 4. Enter the **Reference** entry.
 5. Click **Save**.
-
-## Documentation Gaps to Complete
-
-- Confirm accepted date format and timezone for configuration offsets, and whether locale affects parsing.
-- Add expected run cadence and operational ownership for configuration jobs.
-- Document what to do when Jobs report warnings or failures, including escalation path and retry rules.
-- Clarify how to reactivate a previously deactivated Lemma Page and how long propagation takes.
-- Add exact required metadata fields for a lemma to pass validation, with examples of valid formatting.
-- Clarify whether edits in dashboard Lemma Pages can ever be overwritten by the next configuration run.
-- Add naming and storage conventions for model thumbnails in AWS S3 (folder path, filename pattern, overwrite policy).
-- Confirm whether deprecated sections are read-only in practice or still editable for legacy maintenance.
