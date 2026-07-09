@@ -14,9 +14,9 @@ Use this table for generalized cross-language equivalences only.
 
 Do not use this table for:
 
-* Contextual translation evidence from annotated passages
+* Contextual Translation evidence from annotated passages
 * Automated reference generation
-* Lemma-page publication content that is sourced from the Lemma Pool
+* Lemma Page publication content that is sourced from the Lemma Pool
 
 ## Table Schema
 
@@ -30,7 +30,7 @@ This table is a view of Ancient Word Full Reference with the following columns:
 | Page | Page locator from the source edition metadata. |
 | Line Number | Line locator from the source edition metadata. |
 | Early Category Type | Controlled lexical category label from the source row. |
-| Translation (EN) | English translation value from the source row. |
+| Translation (EN) | English Translation value from the source row. |
 | Translation German | German gloss or explanatory translation corresponding to the same row. |
 | Modern Edition | Modern-edition source label for the entry. |
 | Created by | Creator name recorded in the source table (user/auditing metadata). |
@@ -43,7 +43,7 @@ Because this table is a view, it inherits all row-level provenance from Ancient 
 * No standalone primary key is required in this view.
 * No direct foreign key to Lemma Pool is required in this view.
 * Updates are made in Ancient Word Full Reference, then reflected here through view synchronization.
-* Coverage is limited to rows that satisfy the Greek-Arabic lexicon view filter in the source table.
+* Coverage is limited to rows that satisfy the Greek-Arabic Lexicon view filter in the source table.
 * The same Arabic entry can appear in multiple rows when aligned to different Greek forms, references, or locations.
 
 ## Second Person Arabic Tables

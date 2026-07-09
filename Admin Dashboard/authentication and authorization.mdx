@@ -4,11 +4,11 @@ title: Authentication and Authorization
 
 ## Groups
 
-Groups let you bundle permissions and assign them to users in one step.
+Groups let you bundle Permissions and assign them to Users in one step.
 
-Permissions control whether a user can add, change, delete, or view data in specific sections.
+Permissions control whether a User can add, change, delete, or view data in specific sections.
 
-Current groups:
+Current Groups:
 
 ### Content Editors
 
@@ -27,7 +27,7 @@ Permissions:
 
 ### Model Description Editors
 
-Task: Manage model descriptions.
+Task: Manage Model Descriptions.
 
 Permissions:
 - <code>Atlomyapp|lemma|can add lemma</code>
@@ -81,40 +81,40 @@ Permissions:
 
 1. Go to **Admin Dashboard > Authentication & Authorization > Groups**.
 2. Click **Add Group**.
-3. Enter the group **Name**.
-4. Move required permissions from **Available permissions** to **Chosen permissions**.
+3. Enter the Group **Name**.
+4. Move required Permissions from **Available permissions** to **Chosen permissions**.
 5. Click **Save**.
 
 ## Users
 
-Use this section to create user accounts and control access.
+Use this section to create User accounts and control access.
 
-### Create a user account
+### Create a User account
 
 1. Go to **Admin Dashboard > Authentication & Authorization > Users**.
 2. Click **Add User**.
-3. Enter the username.
+3. Enter the Username.
 4. Select **Password based authentication**.
-5. Enter a password, then confirm it.
+5. Enter a Password, then confirm it.
 6. Click **Save**.
 
-### Update user details and permissions
+### Update User details and Permissions
 
 1. Go to **Admin Dashboard > Authentication & Authorization > Users > [user's username]**.
 2. Add **First name** and **Last name**.
 3. Add the **Email address**.
 4. Set **Active** on or off. Deactivation is preferred over deleting the account.
-5. Set **Staff status** on or off. This keeps the account active but controls dashboard access.
-6. Set **Superuser status** on or off. Superusers receive all permissions.
+5. Set **Staff status** on or off. This keeps the account active but controls Admin Dashboard access.
+6. Set **Superuser status** on or off. Superusers receive all Permissions.
 7. Assign one or more **Groups**.
 8. Assign individual **Permissions** if needed.
 9. Click **Save**.
 
 ## Documentation Gaps to Complete
 
-- Confirm whether these three groups are exhaustive or only current defaults, and who owns updates.
+- Confirm whether these three Groups are exhaustive or only current defaults, and who owns updates.
 - Add a policy for when to use **Groups** versus direct **Permissions**.
 - Document password rules (minimum length, complexity, expiration, reset flow).
 - Clarify whether MFA/2FA is supported or required for any user category.
-- Add an onboarding and offboarding checklist (create user, assign groups, deactivate account, audit access).
+- Add an onboarding and offboarding checklist (create User, assign Groups, deactivate account, audit access).
 - Add guidance for emergency access and superuser assignment approvals.

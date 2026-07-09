@@ -4,25 +4,25 @@ title: 'Dissections'
 
 ## Purpose
 
-The **Dissections** dataset documents reenactments of surgical procedures described in Galen's *On Anatomical Procedures*.
-Each reenactment is represented by a dedicated table/page with structured, step-level records that combine:
+The **Dissections** dataset documents Reenactments of surgical procedures described in Galen's *On Anatomical Procedures*.
+Each Reenactment is represented by a dedicated table/page with structured, Step-level records that combine:
 
 - procedural instructions,
-- source text evidence (Greek + translation),
+- source text evidence (Greek + Translation),
 - associated media assets (images, clips, 3D models), and
 - technical observations for analysis and publication.
 
 ## System Context
 
-Dissections is connected to **Ancient Dissection - Re-enacted** (Coda), which aggregates reenactment data into per-procedure dashboards.
+Dissections is connected to **Ancient Dissection - Re-enacted** (Coda), which aggregates Reenactment data into per-procedure dashboards.
 That cross-doc output is embedded in the [ATLOMY Re-enactment page](https://www.atlomy.com/re-enactment).
 
-After any structural or content change in a reenactment table, refresh the cross-doc table manually.
+After any structural or content change in a Reenactment Table, refresh the Cross-doc Table manually.
 
 ### Cross-Doc Refresh Procedure
 
 1. Open [Ancient Dissection - Re-enacted](https://coda.io/d/_dllGY_uUlp2/Ancient-Dissection-Re-enacted_su0uwSUz#_lu9r6).
-2. Navigate to the dissection pages table that consumes the updated source.
+2. Navigate to the Dissection Pages Table that consumes the updated source.
 3. Select **Options** (top-right) -> **See all options**.
 4. Open **Cross-doc Table**.
 5. Select **Refresh**.
@@ -114,18 +114,18 @@ erDiagram
 
 ## Core Backend Tables
 
-- **Lemma Pool**: Sourced from Greek Lexicon DB; provides normalized lemma tags used by both **Files** and **3D Models**.
+- **Lemma Pool**: Sourced from Greek Lexicon DB; provides normalized Lemma tags used by both **Files** and **3D Models**.
 - **Files**: Synced with the Dissections Google Drive folder; imports image/video assets as records for step-level tagging and linkage.
 - **3D Models**: Synced with Atlomy's Sketchfab account; imports 3D organ models as records for step-level tagging and linkage.
 
 ## Adding a New Reenactment Table
 
-After completing a reenactment, create a new table by cloning an existing reference table (do not create from scratch).
-Populate exactly one row per substep.
+After completing a Reenactment, create a new table by cloning an existing reference table (do not create from scratch).
+Populate exactly one row per Substep.
 
 Required naming convention: `Dissection-[Procedure]-[DD-MM-YY]`.
 
-Data ownership: all columns are completed by the physician who performed the reenactment.
+Data ownership: all columns are completed by the physician who performed the Reenactment.
 
 ## Required Table Schema
 
@@ -147,7 +147,7 @@ Reenactment tables can include procedure-specific extensions, but the following 
 
 ## Reference Tables
 
-Use one of the following as the source template for new reenactment documentation:
+Use one of the following as the source template for new Reenactment documentation:
 
 - [Peritoneum (26-3-24)](https://coda.io/d/_dllGY_uUlp2/Dissection-Peritoneum-26-3-24_suhknJPS#Peritoneum-26-3-24_tuQwiBhX)
 - [Hindlimb (27-3-24)](https://coda.io/d/_dllGY_uUlp2/Dissection-Hindlimb-27-3-24_su0uwSUz#Hindlimb-27-3_tuwxnbUs)

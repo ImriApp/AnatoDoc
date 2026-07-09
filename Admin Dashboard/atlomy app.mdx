@@ -6,13 +6,13 @@ title: 'Atlomy App'
 
 Configurations sync Atlomy.com with the Lemma Pool in Greek Lexicon DB.
 
-When a configuration runs, it creates, updates, deactivates, and removes lemma data in Atlomy.com based on the latest Lemma Pool records.
+When a Configuration runs, it creates, updates, deactivates, and removes Lemma data in Atlomy.com based on the latest Lemma Pool records.
 
-The dashboard now connects directly to Coda through an API, so manual CSV exports to AWS S3 are no longer required for this workflow.
+The Admin Dashboard now connects directly to Coda through an API, so manual CSV exports to AWS S3 are no longer required for this workflow.
 
-### Run a configuration
+### Run a Configuration
 
-1. Confirm every lemma in the Lemma Pool has a valid **Name**, **Translation**, and **Transliteration**.
+1. Confirm every Lemma in the Lemma Pool has a valid **Name**, **Translation**, and **Transliteration**.
 2. Go to **Admin Dashboard > Atlomy App > Configurations > Run script**.
 3. Under **Content**, update the dates in the default script to limit the run to recent records:
 
@@ -20,7 +20,7 @@ The dashboard now connects directly to Coda through an API, so manual CSV export
 {"creation_date_offset": "02/15/2021", "update_date_offset": "04/27/2021"}
 ```
 
-This script imports lemmas created since the creation date and lemmas updated since the update date. Use recent dates to reduce run time.
+This script imports Lemmas created since the creation date and Lemmas updated since the update date. Use recent dates to reduce run time.
 
 Use the date format shown above. Locale does not affect parsing.
 
@@ -31,21 +31,21 @@ Use the date format shown above. Locale does not affect parsing.
 Clicking **Save** runs the add_data script, which does the following:
 
 1. The latest additions, deletions, and changes from the Lemma Pool are synced.
-2. Synced lemmas are compared with the Lemma Pages in the dashboard.
+2. Synced Lemmas are compared with the Lemma Pages in the Admin Dashboard.
 3. Based on this comparison:
-- Lemmas that do not yet exist in the dashboard are created.
+- Lemmas that do not yet exist in the Admin Dashboard are created.
 - Lemmas that already exist are updated.
-- Lemmas marked for deletion in the Lemma Pool are deactivated in the dashboard and removed from search results and Lemmas API responses.
+- Lemmas marked for deletion in the Lemma Pool are deactivated in the Admin Dashboard and removed from search results and Lemmas API responses.
 
 Atlomy.com is usually fully updated within 10 to 15 minutes.
 
 ### Run cadence and ownership
 
-Run a configuration whenever there is enough new data in the database to publish to the website, or whenever an urgent database update must be reflected on the website.
+Run a Configuration whenever there is enough new data in the database to publish to the website, or whenever an urgent database update must be reflected on the website.
 
 The timing is based on researcher judgment.
 
-The technical admin is responsible for running configurations and checking job results, based on researcher requests.
+The technical admin is responsible for running Configurations and checking Jobs results, based on researcher requests.
 
 ## Feedbacks
 
@@ -55,13 +55,13 @@ Each entry includes the sender's email address, institute (if provided), message
 
 ## Jobs
 
-Jobs are JSON reports generated automatically after each configuration run.
+Jobs are JSON reports generated automatically after each Configuration run.
 
 They record successes, warnings, and failures.
 
-Warnings occur when lemma metadata is incomplete, for example missing a short description, long description, or references.
+Warnings occur when Lemma metadata is incomplete, for example missing a Short Description, Long Description, or References.
 
-Failures occur when a lemma is missing a Name, Translation, or Transliteration. For metadata standards, see the [Coda Guide](../Greek%20Lexicon%20DB/lemma%20pool.mdx).
+Failures occur when a Lemma is missing a Name, Translation, or Transliteration. For metadata standards, see the [Coda Guide](../Greek%20Lexicon%20DB/lemma%20pool.mdx).
 
 For field definitions and formatting guidance, see [Lexicon DB (The Lemma Pool)](../Greek%20Lexicon%20DB/lemma%20pool.mdx).
 
@@ -71,36 +71,36 @@ Warnings and failures are common and expected during ongoing content completion.
 
 This section contains Lemma Pages imported from the Lemma Pool.
 
-Use it only to add typography to short and long descriptions. Other content edits should be made in the Lemma Pool and imported through a configuration.
+Use it only to add typography to Short and Long Descriptions. Other content edits should be made in the Lemma Pool and imported through a Configuration.
 
-Configuration runs overwrite lemma content changes in the dashboard Lemmas section.
+Configuration runs overwrite Lemma content changes in the Admin Dashboard Lemmas section.
 
-Do not delete Lemma Pages directly in the dashboard. Deleting breaks references, including URLs, Model Lemmas, and search results.
+Do not delete Lemma Pages directly in the Admin Dashboard. Deleting breaks References, including URLs, Model Lemmas, and search results.
 
-To remove a lemma from public outputs, mark it for deletion in the Lemma Pool and run a configuration. The page will be deactivated and excluded from search and Lemmas API responses.
+To remove a Lemma from public outputs, mark it for deletion in the Lemma Pool and run a Configuration. The page will be deactivated and excluded from search and Lemmas API responses.
 
-To reactivate a previously deactivated lemma page, unmark its row for deletion in the Lemma Pool and run a new configuration. The lemma page will be retrieved again, usually within 10 to 15 minutes.
+To reactivate a previously deactivated Lemma Page, unmark its row for deletion in the Lemma Pool and run a new Configuration. The Lemma Page will be retrieved again, usually within 10 to 15 minutes.
 
-Do not delete lemma rows from the Lemma Pool. Use deletion marking instead, so entries can be restored when needed.
+Do not delete Lemma Rows from the Lemma Pool. Use deletion marking instead, so entries can be restored when needed.
 
 ## Model Lemmas
 
-This section lists model-lemma links. Each row connects one Lemma Page to one Model Page and reflects the backend mapping defined in [Modelling Instructions Sub-Items](../Visualizations/visualizations.mdx#backend-tables).
+This section lists Model Lemma links. Each row connects one Lemma Page to one Model Page and reflects the backend mapping defined in [Modelling Instructions Sub-Items](../Visualizations/visualizations.mdx#backend-tables).
 
-These links allow users to move between Lemma Pages and the 3D Models that include them.
+These links allow Users to move between Lemma Pages and the 3D Models that include them.
 
-### Connect a model page and a lemma page
+### Connect a Model Page and a Lemma Page
 
 1. Go to **Admin Dashboard > Atlomy App > Model Lemmas**.
 2. Click **Add Model Lemma** on the upper right corner.
 3. Select the **Model Page** and **Lemma Page** to connect.
 4. Click **Save**.
 
-Objects in a 3D model that share the Lemma Page name will link to that lemma when clicked.
+Objects in a 3D model that share the Lemma Page name will link to that Lemma when clicked.
 
-## Model mapping (deprecated)
+## Model Mapping (deprecated)
 
-This section was used to create parent and sub-model relationships for 3D models. It is deprecated.
+This section was used to create parent and sub-model relationships for 3D Models. It is deprecated.
 
 ### Create a model-submodel relationship
 
@@ -115,12 +115,12 @@ This section was used to create parent and sub-model relationships for 3D models
 
 Model Pages display 3D models and model metadata. They are created and managed here.
 
-### Create a new model page
+### Create a new Model Page
 
 1. Go to **Admin Dashboard > Atlomy App > Models**.
 2. Click **Add model**.
 3. Enter required fields:
-- **Model Name** using the format [ancient author] - [system name], for example Galen - Hindlimb.
+- **Model Name** using the format [Ancient Author] - [system name], for example Galen - Hindlimb.
 - **URL** of the 3D model file in AWS S3.
 - **Ancient Author**.
 - **Author** (researcher who designed the model).
@@ -137,11 +137,11 @@ This section manages Atlomy.com pages that are not Lemma Pages or Model Pages.
 
 - **Author Pages** provide information about authors such as Aristotle, Galen, Hippocrates, and Celsus. Users access them through Lemma Page references.
 - **Treatise Pages** provide information about texts such as Hippocrates' On the Heart and Aristotle's History of Animals. Users access them through Lemma Page references.
-- **Other Pages** are independent of the 3D Atlas and lexicon, and are accessed from the home page. Examples include **How to use Atlomy** and **About**.
+- **Other Pages** are independent of the 3D Atlas and lexicon, and are accessed from the home page. Examples include **How to Use ATLOMY** and **About**.
 
 ## References (deprecated)
 
-This section was used to assign references to **Model Mappings**. It is deprecated.
+This section was used to assign References to **Model Mappings**. It is deprecated.
 
 Deprecated sections are still editable for legacy maintenance.
 
