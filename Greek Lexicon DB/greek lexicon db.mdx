@@ -8,7 +8,7 @@ Greek Lexicon DB stores Lemma data in a relational, table-based structure and se
 
 ## Overview
 
-[Supporting Tables](supporting%20tables.mdx) define recurring entities used throughout the database, including abbreviated references, edition bibliographies, Source Languages, Category Types, and Ancient Words. These tables feed two core outputs:
+[Supporting Tables](supporting%20tables.mdx) define recurring entities used throughout the database, including Abbreviated references, edition bibliographies, Source Languages, Category Types, and Ancient Words. These tables feed two core outputs:
 
 1. [Ancient Word Full Reference](./supporting%20tables.mdx#ancient-word-tables): Builds automated references for Ancient Words from INCEpTION annotations, including bibliographic metadata (treatise, edition, location) and lexical attribution (Source Language, Category Type, Lemma).
 2. [The Lemma Pool](lemma%20pool.mdx): Consolidates Lemma-level data, including Transliteration, single-gloss Translation, descriptions, and linked Automated References.
@@ -114,8 +114,8 @@ erDiagram
 		TEXT related_terms  ""  
 	}
 
-	"abbreviated References"||--o{"Early Edition Bibliographies":"Provides abbreviations for"
-	"abbreviated References"||--o{"Modern Edition Bibliographies":"Provides abbreviations for"
+	"Abbreviated References"||--o{"Early Edition Bibliographies":"Provides abbreviations for"
+	"Abbreviated References"||--o{"Modern Edition Bibliographies":"Provides abbreviations for"
 	"Modern Edition Bibliographies"||--o{"Ancient Word Full Reference":"Defines Modern Bibliographies for"
 	"Early Edition Bibliographies"||--o{"Ancient Word Full Reference":"Defines Early Bibliographies for"
 	"Category Types"||--o{"Ancient Word Full Reference":"Defines Category Types for"
