@@ -30,11 +30,11 @@ Use the date format shown above. Locale does not affect parsing.
 
 Clicking **Save** runs the add_data script, which does the following:
 
-1. Elastic is updated with the additions, deletions, and changes in the Lemma Pool.
-2. The Lemmas in Elastic are compared with the Lemma Pages in the dashboard.
+1. The latest additions, deletions, and changes from the Lemma Pool are synced.
+2. Synced lemmas are compared with the Lemma Pages in the dashboard.
 3. Based on this comparison:
-- Lemmas that exist in Elastic but not in the dashboard are created.
-- Lemmas that exist in both are updated.
+- Lemmas that do not yet exist in the dashboard are created.
+- Lemmas that already exist are updated.
 - Lemmas marked for deletion in the Lemma Pool are deactivated in the dashboard and removed from search results and Lemmas API responses.
 
 Atlomy.com is usually fully updated within 10 to 15 minutes.
